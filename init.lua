@@ -15,3 +15,4 @@ vim.opt.rtp:prepend(lazypath)
 require("vim-config")
 require("lazy").setup("plugins")
 
+vim.cmd(":Neotree filesystem reveal left<CR>")
