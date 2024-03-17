@@ -10,10 +10,13 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
+          -- LUA
           "lua_ls",
+          -- JS
           "tsserver",
+          -- PHP
           "intelephense",
-          -- missing requirement "phpactor",
+          -- missing requirement"phpactor",
           -- missing requirement "psalm"
         }
       })
