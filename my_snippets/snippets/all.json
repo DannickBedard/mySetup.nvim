@@ -1,0 +1,45 @@
+{
+  "logger": {
+    "prefix": "viridem-logger",
+    "body": [
+      "\\viridem\\logger\\ViridemLogger::getLogger(__CLASS__)->info('DANNICK-' . var_dump_return($1));"
+    ],
+    "description": "Template de base d'un log dans Viridem."
+  },
+  "wordpresslogger": {
+    "prefix": "wordpress-logger",
+    "body": [
+      "error_log(print_r($1 ,true));"
+    ],
+    "description": "wordpress logger"
+  },
+  "laravellogger": {
+    "prefix": "laravel-logger",
+    "body": [
+      "\\Illuminate\\Support\\Facades\\Log::debug('Dannick : ' . var_dump_return($1));"
+    ],
+    "description": "laravel logger"
+  },
+	"php": {
+		"prefix": "php",
+		"body": [
+			"<?php $1 ?>"
+		],
+		"description": "php tag"
+	},
+  "html": {
+		"prefix": "php",
+		"body": [
+			"?>$1<?php"
+		],
+		"description": "ouverture d'un html dans du php"
+	},
+	"snip2": {
+		"prefix": "all2",
+		"body": [
+			"multi $1",
+			"line $2",
+			"snippet$0"
+		]
+	}
+}

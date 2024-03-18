@@ -6,11 +6,14 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
-				-- null_ls.builtins.diagnostics.eslint,
+				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.diagnostics.tlint,
+				--null_ls.builtins.diagnostics.intelephense,
+				--null_ls.builtins.diagnostics.tsserver,
+				-- null_ls.builtins.diagnostics.lua_ls,
 				-- null_ls.builtins.completion.spell,
 			},
 		})
-
 		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 	end,
 }
