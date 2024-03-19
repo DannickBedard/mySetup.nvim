@@ -36,3 +36,12 @@ url : https://github.com/neovim/nvim-lspconfig
 keymapping :
 
 
+# Keymap
+
+## Navigation
+ n
+<leader>p   -> Paste from last yank (after cursor)
+<leader>P   -> Paste from last yank (before cursor)
+<leader>y   -> Yank to systemClipboard ("+y)
+yyp         -> Duplicate line without affecting register (:co.)
+
