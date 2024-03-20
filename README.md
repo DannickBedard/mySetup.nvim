@@ -75,8 +75,10 @@ s<char> -> Make selection for char in the current file. (the cursor lend on the 
 
 ## Harpoon
 <leader>a   -> Harpoon current file to list
+<leader>d   -> Harpoon remove current file to list
 <leader>1-9 -> Got to x item in list
 <C-e>       -> Open list with telescope
+    <C-d>       -> delete current selected in list
 
 ## none-ls
 <leader>gf  -> Format entire file
