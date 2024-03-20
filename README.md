@@ -39,9 +39,58 @@ keymapping :
 # Keymap
 
 ## Navigation
- n
 <leader>p   -> Paste from last yank (after cursor)
 <leader>P   -> Paste from last yank (before cursor)
 <leader>y   -> Yank to systemClipboard ("+y)
 yyp         -> Duplicate line without affecting register (:co.)
+J           -> = to 5j (replace default join keymap)
+K           -> = to 5k (replace default join keymap)
 
+<leader>j   -> override join line under
+<leader>k   -> override join line hover
+
+## Easy-motion
+always begin with <leader><leader>
+w -> Make selection forward in current line
+b -> Make selection backward in current line
+a -> Make selection hint beginin of work everywhere
+j -> Make selection start of line under current line
+k -> Make selection start of line hover current line
+f<char> -> Make selection for char forward in current line (the cursor lend on the char)
+F<char> -> Make selection for char backward in current line (the cursor lend on the char)
+f<char> -> Make selection for char forward in current line (the cursor lend before the char)
+F<char> -> Make selection for char backward in current line (the cursor lend before the char)
+s<char> -> Make selection for char in the current file. (the cursor lend on the char)
+
+## Tabs navigation
+<leader><leader>n -> New tabs with the current page (:tabnew %<CR>)
+<leader>n   -> Next tabs (:tabn<CR>)
+<leader>N   -> Previous tabs (:tabp<CR>)
+
+## Telescope
+<leader>sf  -> Search by fileName
+<leader>fg  -> Fuzzy find global
+<leader>fb  -> Fuzzy find buffer
+<leader>fh  -> Find in help
+
+## Harpoon
+<leader>a   -> Harpoon current file to list
+<leader>1-9 -> Got to x item in list
+<C-e>       -> Open list with telescope
+
+## none-ls
+<leader>gf  -> Format entire file
+
+## Neo-tree
+<C-n>       -> Show fileExplorer on left :Neotree filesystem reveal left<CR>
+<leader>bf  -> :Neotree buffers reveal float<CR>
+
+## lsp
+todo...
+
+## Completion
+todo..
+
+## Text edition normal mode
+<leader>j   -> override join line under
+<leader>k   -> override join line hover

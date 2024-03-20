@@ -1,6 +1,6 @@
 return {
   'smoka7/hop.nvim',
-  tag = '*', -- optional but strongly recommended
+  version = "*",
   config = function()
     -- you can configure Hop the way you like here; see :h hop-config
     require'hop'.setup { 
