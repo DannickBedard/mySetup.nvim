@@ -20,3 +20,7 @@ vim.keymap.set('n', '<leader>k', 'K', {})
 vim.keymap.set('n', '<leader><leader>n', ':tabnew %<CR>', {})
 vim.keymap.set('n', '<leader>n', ':tabn<CR>', {})
 vim.keymap.set('n', '<leader>N', ':tabp<CR>', {})
+
+
+vim.keymap.set('n', '<leader>B', '<C-V>', {})
+vim.keymap.set('v', '<leader>B', '<C-V>', {})

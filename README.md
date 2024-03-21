@@ -28,10 +28,6 @@ url : https://github.com/williamboman/mason-lspconfig.nvim
 ### Nvim-lspconfig
 Description : 
 url : https://github.com/neovim/nvim-lspconfig
-
-### Tabs - barbar.nvim
-... to install and try
-
 # Keymap
 
 ## Navigation
@@ -44,6 +40,7 @@ K           -> = to 5k (replace default join keymap)
 
 <leader>j   -> override join line under
 <leader>k   -> override join line hover
+<leader>B   -> Enter visual mode
 
 ## Easy-motion
 always begin with <leader><leader>
@@ -92,3 +89,16 @@ todo..
 ## Text edition normal mode
 <leader>j   -> override join line under
 <leader>k   -> override join line hover
+
+
+# To try...
+
+
+### Tabs - barbar.nvim
+... to install and try
+
+### other : 
+Surround thing with : https://github.com/kylechui/nvim-surround
+nvim comment
+Autopair : https://github.com/windwp/nvim-autopairs
+Terminal : https://github.com/akinsho/toggleterm.nvim
