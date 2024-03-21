@@ -76,10 +76,13 @@ s<char> -> Make selection for char in the current file. (the cursor lend on the 
 ## none-ls
 <leader>gf  -> Format entire file
 
-## Neo-tree
+## File naviguation
+### Neo-tree
 <C-n>       -> Show fileExplorer on left :Neotree filesystem reveal left<CR>
 <leader>bf  -> :Neotree buffers reveal float<CR>
 H           -> while in file explore toggle hidden file
+### oil
+\-           -> Open current directory to edition un buffer
 ## lsp
 todo...
 
