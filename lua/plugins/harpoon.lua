@@ -55,6 +55,7 @@ return {
         previewer = conf.file_previewer({}),
         sorter = conf.generic_sorter({}),
         attach_mappings = function(prompt_buffer_number, map)
+          -- Delete selected entry from the list
           map(
             "i",
             "<C-d>", -- your mapping here

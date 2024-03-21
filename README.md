@@ -8,33 +8,29 @@ One dark pro : https://github.com/olimorris/onedarkpro.nvim
 ### Telescope :
 Description : 
 url : 
-keymapping :
 
 ### NeoTree
 Description : 
 url : 
-keymapping :
 
 ### Treesitter
 Description : 
 url : 
-keymapping :
 
 ### Mason
 Description : 
 url : https://github.com/williamboman/mason.nvim
-keymapping :
 
 ### Mason-lspconfig
 Description : 
 url : https://github.com/williamboman/mason-lspconfig.nvim
-keymapping :
 
 ### Nvim-lspconfig
 Description : 
 url : https://github.com/neovim/nvim-lspconfig
-keymapping :
 
+### Tabs - barbar.nvim
+... to install and try
 
 # Keymap
 
@@ -86,7 +82,7 @@ s<char> -> Make selection for char in the current file. (the cursor lend on the 
 ## Neo-tree
 <C-n>       -> Show fileExplorer on left :Neotree filesystem reveal left<CR>
 <leader>bf  -> :Neotree buffers reveal float<CR>
-
+H           -> while in file explore toggle hidden file
 ## lsp
 todo...
 
