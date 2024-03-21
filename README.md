@@ -93,6 +93,9 @@ todo..
 <leader>j   -> override join line under
 <leader>k   -> override join line hover
 
+Rename something multiple time : 
+\* on word afer N <action>gn than n to go to next occurence and to . to repeate the gn action
+
 
 # To try...
 
