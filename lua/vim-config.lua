@@ -1,11 +1,20 @@
-vim.cmd("set number")
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+local opt = vim.opt -- for conciseness
+
+opt.number = true
+opt.relativenumber = true
+opt.expandtab = true
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
+
+-- search settings
+opt.ignorecase = true -- ignore case when searching
+opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+
+-- cursor line
+opt.cursorline = true -- highlight the current cursor line
 
 vim.g.mapleader = " "
-vim.wo.relativenumber = true
 
 -- LineNumberColore
 vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#51B3EC', bold=true })
