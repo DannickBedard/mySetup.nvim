@@ -77,12 +77,15 @@ s<char> -> Make selection for char in the current file. (the cursor lend on the 
 <leader>gf  -> Format entire file
 
 ## File naviguation
+
 ### Neo-tree
 <C-n>       -> Show fileExplorer on left :Neotree filesystem reveal left<CR>
 <leader>bf  -> :Neotree buffers reveal float<CR>
 H           -> while in file explore toggle hidden file
+
 ### oil
 \-           -> Open current directory to edition un buffer
+
 ## lsp
 todo...
 
@@ -93,18 +96,8 @@ todo..
 <leader>j   -> override join line under
 <leader>k   -> override join line hover
 
+# Other tips
+
 Rename something multiple time : 
 \* on word afer N <action>gn than n to go to next occurence and to . to repeate the gn action
 
-
-# To try...
-
-
-### Tabs - barbar.nvim
-... to install and try
-
-### other : 
-Surround thing with : https://github.com/kylechui/nvim-surround
-nvim comment
-Autopair : https://github.com/windwp/nvim-autopairs
-Terminal : https://github.com/akinsho/toggleterm.nvim
