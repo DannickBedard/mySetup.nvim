@@ -34,6 +34,8 @@ url : https://github.com/neovim/nvim-lspconfig
 <leader>p   -> Paste from last yank (after cursor)
 <leader>P   -> Paste from last yank (before cursor)
 <leader>y   -> Yank to systemClipboard ("+y)
+<leader>cp  -> Past from systemClopboard ("+p)
+<leader>cP  -> Past from systemClopboard ("+P)
 yyp         -> Duplicate line without affecting register (:co.)
 J           -> = to 5j (replace default join keymap)
 K           -> = to 5k (replace default join keymap)

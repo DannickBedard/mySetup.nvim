@@ -1,10 +1,14 @@
 -- Paste yank
 vim.keymap.set('n', '<leader>p', '"0p', {})
 vim.keymap.set('n', '<leader>P', '"0P', {})
+vim.keymap.set('n', '<leader>cp', '"+p', {})
+vim.keymap.set('n', '<leader>cP', '"+P', {})
 vim.keymap.set('n', 'yyp', ':co.<CR>', {}) -- Dup line wihout affecting reg
 
 vim.keymap.set('v', '<leader>p', '"0p', {})
 vim.keymap.set('v', '<leader>P', '"0P', {})
+vim.keymap.set('v', '<leader>cp', '"+p', {})
+vim.keymap.set('v', '<leader>cP', '"+P', {})
 vim.keymap.set('v', '<leader>y', '"+y', {})
 vim.keymap.set('v', 'yyp', ':co.<CR>', {}) -- Dup line wihout affecting reg
 
