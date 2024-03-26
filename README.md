@@ -30,7 +30,7 @@ Description :
 url : https://github.com/neovim/nvim-lspconfig
 # Keymap
 
-## Navigation
+## Navigation / Normal mode action
 <leader>p   -> Paste from last yank (after cursor)
 
 <leader>P   -> Paste from last yank (before cursor)
@@ -43,13 +43,15 @@ url : https://github.com/neovim/nvim-lspconfig
 
 yyp         -> Duplicate line without affecting register (:co.)
 
+ddp         -> Swap line
+
 J           -> = to 5j (replace default join keymap)
 
 K           -> = to 5k (replace default join keymap)
 
-<leader>j   -> override join line under
+    <leader>j   -> override join line under
 
-<leader>k   -> override join line hover
+    <leader>k   -> override join line hover
 
 <leader>B   -> Enter visual block mode
 
@@ -84,6 +86,12 @@ s<char> -> Make selection for char in the current file. (the cursor lend on the 
 <leader>n   -> Next tabs (:tabn<CR>)
 
 <leader>N   -> Previous tabs (:tabp<CR>)
+
+## Maks
+m<char>     -> Set Mark
+'<char>     -> Get Mark
+m<CHAR>     -> Set Global Mark
+'<CHAR>     -> Get Global Mark
 
 ## Telescope
 
