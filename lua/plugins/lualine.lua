@@ -7,6 +7,7 @@ return {
     require('lualine').setup({
 
       sections = {
+        lualine_a = {'tabs' },
         lualine_c = { "filename",           {
           "harpoon2",
             icon = "󰀱 ",
@@ -16,6 +17,22 @@ return {
             no_harpoon = "Harpoon not loaded",
           }
         },
+      },
+      tabline = {
+        lualine_a = {{'tabs', mode = 2 }},
+        lualine_b = {'branch'},
+        lualine_c = {'filename' },
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {}
+      },
+      winbar = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {}
       }
     })
   end
