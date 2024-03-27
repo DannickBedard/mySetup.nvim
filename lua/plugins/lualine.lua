@@ -23,7 +23,7 @@ return {
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
-        lualine_y = {},
+        lualine_y = {'datetime'},
         lualine_z = {}
       },
       winbar = {
@@ -31,8 +31,9 @@ return {
         lualine_b = {{'filename', path = 1}},
         lualine_c = {},
         lualine_x = {},
-        lualine_y = {'datetime','progress'},
-        lualine_z = {'location'}}
+        -- lualine_y = {'progress'},
+        -- lualine_z = {'location'}
+      }
     })
   end
 }
