@@ -32,8 +32,6 @@ url : https://github.com/neovim/nvim-lspconfig
 
 ## Navigation / Normal mode action
 
-Rosie <3   -> Mon petit bb
-
 <leader>p   -> Paste from last yank (after cursor)
 
 <leader>P   -> Paste from last yank (before cursor)
@@ -110,13 +108,13 @@ m<CHAR>     -> Set Global Mark
 
 <leader>a   -> Harpoon current file to list
 
-<leader>d   -> Harpoon remove current file to list
+<leader>d   -> Harpoon remove current file to list 
 
 <leader>1-9 -> Got to x item in list
 
 <C-e>       -> Open list with telescope
 
-    <C-d>       -> delete current selected in list
+<C-d>       -> delete current selected in list (List mode)
 
 ## none-ls
 
