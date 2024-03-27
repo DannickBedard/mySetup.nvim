@@ -50,9 +50,9 @@ J           -> = to 5j (replace default join keymap)
 
 K           -> = to 5k (replace default join keymap)
 
-    <leader>j   -> override join line under
+<leader>j   -> override join line under
 
-    <leader>k   -> override join line hover
+<leader>k   -> override join line hover
 
 <leader>B   -> Enter visual block mode
 
@@ -132,12 +132,15 @@ H           -> while in file explore toggle hidden file
 
 
 ### oil
+
 \-           -> Open current directory to edition un buffer
 
 ## lsp
+
 todo...
 
 ## Completion
+
 todo..
 
 ## Text edition normal mode
