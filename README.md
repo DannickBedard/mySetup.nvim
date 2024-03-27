@@ -31,6 +31,7 @@ url : https://github.com/neovim/nvim-lspconfig
 # Keymap
 
 ## Navigation / Normal mode action
+
 Rosie <3   -> Mon petit bb
 
 <leader>p   -> Paste from last yank (after cursor)
