@@ -15,4 +15,5 @@ require("vim-config")
 require("vim-keymaping")
 require("lazy").setup("plugins")
 
-vim.cmd(":Neotree filesystem reveal left<CR>")
+-- Auto open neotree. Deactive it because anoying i think.
+-- vim.cmd(":Neotree filesystem reveal left<CR>")
