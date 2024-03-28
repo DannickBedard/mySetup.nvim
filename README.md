@@ -28,6 +28,7 @@ url : https://github.com/williamboman/mason-lspconfig.nvim
 ### Nvim-lspconfig
 Description : 
 url : https://github.com/neovim/nvim-lspconfig
+
 # Keymap
 
 ## Navigation / Normal mode action
@@ -55,6 +56,24 @@ K           -> = to 5k (replace default join keymap)
 <leader>k   -> override join line hover
 
 <leader>B   -> Enter visual block mode
+
+## Insert mode action
+
+U -> On selection make UPPERCASE
+
+u -> On selection make lowercase
+
+y -> yand selection
+
+<leader>y -> yand selection to system clipboard
+
+c -> change selection
+
+d -> delete selection
+
+i" -> Select everything inside " (Can do with ", ', (, ), {, }, [, ], t) note: t is for tag
+
+a" -> Select everything inside " including (same à i but include the around)
 
 ## Easy-motion
 always begin with <leader><leader>
