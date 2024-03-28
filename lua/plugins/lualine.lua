@@ -27,7 +27,7 @@ return {
         lualine_z = {}
       },
       winbar = {
-        lualine_a = {'filename'},
+        -- lualine_a = {'filename'},
         lualine_b = {{'filename', path = 1}},
         lualine_c = {},
         lualine_x = {},
