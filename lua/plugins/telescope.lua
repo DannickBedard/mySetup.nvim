@@ -2,39 +2,49 @@ return {
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.6',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    
+
     config = function ()
 
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<leader>sr', builtin.resume, {}) -- Resume last search
-      vim.keymap.set('n', '<leader>sf', builtin.find_files, {}) -- See override bellow. Resume search
-      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-      vim.keymap.set('n', '<leader>sif', builtin.current_buffer_fuzzy_find, {})
 
-      -- Does not work with harpoon... 
-      -- _last_picker = nil
-      -- _last_ctx = nil
-      -- local function telescope_middleware(func, ctxfunc)
-      --   function inner()
-      --     if ctxfunc == nil then
-      --       ctx = nil
-      --     else
-      --       ctx = ctxfunc()
-      --     end
-      --     if func == _last_picker and vim.deep_equal(ctx, _last_ctx) then
-      --       builtin.resume()
-      --     else
-      --       _last_picker = func
-      --       _last_ctx = ctx
-      --       func()
-      --     end
-      --   end
-      --   return inner
-      -- end
-      -- vim.keymap.set('n', '<leader>sf', telescope_middleware(builtin.find_files), {})
-      -- vim.keymap.set('n', '<leader>fg', telescope_middleware(builtin.live_grep), {})
+      function vim.getVisualSelection()
+        vim.cmd('noau normal! "vy"')
+        local text = vim.fn.getreg('v')
+        vim.fn.setreg('v', {})
+
+        text = string.gsub(text, "\n", "")
+        if #text > 0 then
+          return text
+        else
+          return ''
+        end
+      end
+
+      local opts = { noremap = true, silent = true }
+
+      vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
+      vim.keymap.set('v', '<leader>sf', function()
+        local text = vim.getVisualSelection()
+        builtin.find_files({ default_text = text })
+      end, opts)
+
+      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+      vim.keymap.set('v', '<leader>fg', function()
+        local text = vim.getVisualSelection()
+        builtin.live_grep({ default_text = text })
+      end, opts)
+
+      vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+      vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+      vim.keymap.set('n', '<leader>sif', builtin.current_buffer_fuzzy_find, {})
+      vim.keymap.set('v', '<leader>sif', function()
+        local text = vim.getVisualSelection()
+        builtin.current_buffer_fuzzy_find({ default_text = text })
+      end, opts)
 
     end,
   },
