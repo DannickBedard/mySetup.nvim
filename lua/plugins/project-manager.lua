@@ -22,6 +22,7 @@ return {
         "~/AppData/local/nvim",
         -- Pc home
         "~/Documents/Projet/*",
+        "~/Documents/Notes",
       },
     })
 
