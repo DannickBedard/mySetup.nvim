@@ -13,6 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-config")
 require("vim-keymaping")
+
+-- Settinge require for project-manage plugin
+require("project-manage-config")
+
 require("lazy").setup("plugins")
 
 -- Auto open neotree. Deactive it because anoying i think.
