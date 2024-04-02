@@ -173,3 +173,10 @@ todo..
 Rename something multiple time : 
 \* on word afer N <action>gn than n to go to next occurence and to . to repeate the gn action
 
+# Notes
+
+Rename something multiple time : 
+\* on word afer N <action>gn than n to go to next occurence and to . to repeate the gn action
+
+Rename something multiple time : 
+\* on word afer N <action>gn than n to go to next occurence and to . to repeate the gn action
