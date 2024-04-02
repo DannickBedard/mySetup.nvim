@@ -139,9 +139,7 @@ m<CHAR>     -> Set Global Mark
 
 <leader>gf  -> Format entire file
 
-## File naviguation
-
-### Neo-tree
+## Neo-tree
 
 <C-n>       -> Show fileExplorer on left :Neotree filesystem reveal left<CR>
 
@@ -150,7 +148,7 @@ m<CHAR>     -> Set Global Mark
 H           -> while in file explore toggle hidden file
 
 
-### oil
+## oil
 
 \-           -> Open current directory to edition un buffer
 
@@ -173,7 +171,7 @@ todo..
 Rename something multiple time : 
 \* on word afer N <action>gn than n to go to next occurence and to . to repeate the gn action
 
-# Notes
+## Notes
 
 Rename something multiple time : 
 \* on word afer N <action>gn than n to go to next occurence and to . to repeate the gn action
