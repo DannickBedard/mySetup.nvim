@@ -77,6 +77,14 @@ i" -> Select everything inside " (Can do with ", ', (, ), {, }, [, ], t) note: t
 
 a" -> Select everything inside " including (same à i but include the around)
 
+## Search mode
+
+<C-r><C-w> -> Search current word under cursor
+
+<C-r>0      -> Paste yanked text
+
+<C-r>"      -> Paste from register 
+
 ## Easy-motion
 always begin with <leader><leader>
 
