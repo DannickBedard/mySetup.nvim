@@ -57,6 +57,8 @@ K           -> = to 5k (replace default join keymap)
 
 <leader>B   -> Enter visual block mode
 
+<C-w>o      -> Close all other windows
+
 ## Insert mode action
 
 U -> On selection make UPPERCASE
