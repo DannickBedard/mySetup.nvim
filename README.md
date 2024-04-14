@@ -59,6 +59,8 @@ K           -> = to 5k (replace default join keymap)
 
 <C-w>o      -> Close all other windows
 
+gv          -> Go to previous selection
+
 ## Insert mode action
 
 U -> On selection make UPPERCASE
@@ -77,7 +79,7 @@ i" -> Select everything inside " (Can do with ", ', (, ), {, }, [, ], t) note: t
 
 a" -> Select everything inside " including (same à i but include the around)
 
-## Search mode
+## Search mode (/)
 
 <C-r><C-w> -> Search current word under cursor
 
@@ -111,11 +113,20 @@ s<char> -> Make selection for char in the current file. (the cursor lend on the 
 
 ## Tabs navigation
 
-<leader><leader>n -> New tabs with the current page (:tabnew %<CR>)
+<leader>tt -> New tabs with the current page (:tabnew %<CR>)
 
-<leader>n   -> Next tabs (:tabn<CR>)
+<leader>tn   -> Next tabs (:tabn<CR>)
 
-<leader>N   -> Previous tabs (:tabp<CR>)
+<leader>tp   -> Previous tabs (:tabp<CR>)
+
+## Quicks fix list
+
+<leader>q   -> Open quick fix list
+<leader>Q   -> Close quick fix list
+<leader>n   -> Next in quick fix list
+<leader>p   -> Prious in quick fix list
+<leader>N   -> First in quick list
+<leader>P   -> Last in quick list
 
 ## Maks
 m<char>     -> Set Mark
@@ -125,13 +136,18 @@ m<CHAR>     -> Set Global Mark
 
 ## Telescope
 
-<leader>sf  -> Search by fileName
+<leader>ff  -> Search by fileName
 
 <leader>fg  -> Fuzzy find global
 
 <leader>fb  -> Fuzzy find buffer
 
 <leader>fh  -> Find in help
+
+<leader>ps  -> Find open telescope searching for word under cusor. Than you can filter by file name
+
+<leader>pws  -> Open grep search then output to telescope searching for grep result. Than you can filter by file name
+<leader>pWs  -> Open grep search then output to telescope searching for grep result. Than you can filter by file name
 
 ## Harpoon
 
@@ -144,6 +160,10 @@ m<CHAR>     -> Set Global Mark
 <C-e>       -> Open list with telescope
 
 <C-d>       -> delete current selected in list (List mode)
+
+## Undotree
+
+<leader>u   -> Toggle undo tree
 
 ## none-ls
 

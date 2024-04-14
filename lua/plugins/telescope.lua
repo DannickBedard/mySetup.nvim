@@ -25,26 +25,48 @@ return {
 
       local opts = { noremap = true, silent = true }
 
-      vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
-      vim.keymap.set('v', '<leader>sf', function()
+      -- ff stand for find file
+      vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+      vim.keymap.set('v', '<leader>ff', function()
         local text = vim.getVisualSelection()
         builtin.find_files({ default_text = text })
       end, opts)
 
+      -- fg find global
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
       vim.keymap.set('v', '<leader>fg', function()
         local text = vim.getVisualSelection()
         builtin.live_grep({ default_text = text })
       end, opts)
 
+      -- fb find buffer
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+
+      -- fh find help
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
-      vim.keymap.set('n', '<leader>sif', builtin.current_buffer_fuzzy_find, {})
-      vim.keymap.set('v', '<leader>sif', function()
+      -- fif find in file
+      vim.keymap.set('n', '<leader>fif', builtin.current_buffer_fuzzy_find, {})
+      vim.keymap.set('v', '<leader>fif', function()
         local text = vim.getVisualSelection()
         builtin.current_buffer_fuzzy_find({ default_text = text })
       end, opts)
+
+      -- Open grep search then output to telescope searching for grep result. Than you can filter by file name
+      vim.keymap.set('n', '<leader>pws', function()
+        local word = vim.fn.expand("<cword>")
+        builtin.grep_string({ search = word })
+      end)
+      -- ... but whit uppercase word
+      vim.keymap.set('n', '<leader>pWs', function()
+        local word = vim.fn.expand("<cWORD>")
+        builtin.grep_string({ search = word })
+      end)
+
+      -- Find open telescope searching for word under cusor. Than you can filter by file name
+      vim.keymap.set('n', '<leader>ps', function()
+        builtin.grep_string({ search = vim.fn.input("Grep > ") })
+      end)
 
     end,
   },

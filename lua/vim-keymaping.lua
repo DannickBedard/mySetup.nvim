@@ -28,10 +28,24 @@ vim.keymap.set('n', '<leader>j', 'J', {})
 vim.keymap.set('n', '<leader>k', 'K', {})
 
 -- Tabs naviguation
-vim.keymap.set('n', '<leader><leader>n', ':tabnew %<CR>', {})
-vim.keymap.set('n', '<leader>n', ':tabn<CR>', {})
-vim.keymap.set('n', '<leader>N', ':tabp<CR>', {})
+vim.keymap.set('n', '<leader>tt', ':tabnew %<CR>', {})
+vim.keymap.set('n', '<leader>tn', ':tabn<CR>', {})
+vim.keymap.set('n', '<leader>tp', ':tabp<CR>', {})
+
+-- Quick fix
+vim.keymap.set('n', '<leader>q', ':copen<CR>', {})
+vim.keymap.set('n', '<leader>Q', ':cclose<CR>', {})
+vim.keymap.set('n', '<leader>n', ':cnext<CR>', {})
+vim.keymap.set('n', '<leader>p', ':cprev<CR>', {})
+vim.keymap.set('n', '<leader>N', ':cfirt<CR>', {})
+vim.keymap.set('n', '<leader>P', ':clast<CR>', {})
 
 
 vim.keymap.set('n', '<leader>B', '<C-V>', {})
 vim.keymap.set('v', '<leader>B', '<C-V>', {})
+
+-- Quick fix
+
+
+-- other
+vim.keymap.set("n", "Q", "<nop>")
