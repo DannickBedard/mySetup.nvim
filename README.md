@@ -61,6 +61,8 @@ K           -> = to 5k (replace default join keymap)
 
 gv          -> Go to previous selection
 
+<C-6>       -> Alternative file nav
+
 ## Insert mode action
 
 U -> On selection make UPPERCASE
@@ -195,6 +197,22 @@ todo..
 <leader>j   -> override join line under
 
 <leader>k   -> override join line hover
+
+## Commands (quickfixs)
+
+:lopen              -> Open quick fix
+
+:lclose or lcl      -> Close quick fix
+
+:lnext              -> Go to next item
+
+:lprev              -> Go to previous item
+
+:lfirst             -> Go to first item
+
+:llast              -> Go to last item
+
+:ll<n>              -> Go to n item
 
 # Other tips
 

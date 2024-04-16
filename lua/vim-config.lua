@@ -24,6 +24,7 @@ opt.updatetime = 50
 opt.colorcolumn = "80"
 
 opt.scrolloff = 8 -- Shen scrolling there will always be 8 line on top or bottom
+opt.sidescrolloff = 8
 vim.opt.incsearch = true
 
 vim.opt.swapfile = false
