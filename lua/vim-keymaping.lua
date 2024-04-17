@@ -36,16 +36,15 @@ vim.keymap.set('n', '<leader>tp', ':tabp<CR>', {})
 vim.keymap.set('n', '<leader>q', ':copen<CR>', {})
 vim.keymap.set('n', '<leader>Q', ':cclose<CR>', {})
 vim.keymap.set('n', '<leader>n', ':cnext<CR>', {})
-vim.keymap.set('n', '<leader>p', ':cprev<CR>', {})
-vim.keymap.set('n', '<leader>N', ':cfirt<CR>', {})
-vim.keymap.set('n', '<leader>P', ':clast<CR>', {})
+vim.keymap.set('n', '<leader>n', ':cprev<CR>', {})
+vim.keymap.set('n', '<leader>qf', ':cfirt<CR>', {})
+vim.keymap.set('n', '<leader>ql', ':clast<CR>', {})
 
+-- Split 
+vim.keymap.set("n", "<leader>s", ":vsplit<CR>", {})
+vim.keymap.set("n", "<leader>S", ":split<CR>", {})
+-- other
+vim.keymap.set("n", "Q", "<nop>") -- seem like Q goes to dark place 
 
 vim.keymap.set('n', '<leader>B', '<C-V>', {})
 vim.keymap.set('v', '<leader>B', '<C-V>', {})
-
--- Quick fix
-
-
--- other
-vim.keymap.set("n", "Q", "<nop>")

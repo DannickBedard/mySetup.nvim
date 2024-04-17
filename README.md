@@ -63,6 +63,10 @@ gv          -> Go to previous selection
 
 <C-6>       -> Alternative file nav
 
+<leader>s   -> Split vertical
+
+<leader>S   -> Split horizontal
+
 ## Insert mode action
 
 U -> On selection make UPPERCASE
@@ -126,9 +130,9 @@ s<char> -> Make selection for char in the current file. (the cursor lend on the 
 <leader>q   -> Open quick fix list
 <leader>Q   -> Close quick fix list
 <leader>n   -> Next in quick fix list
-<leader>p   -> Prious in quick fix list
-<leader>N   -> First in quick list
-<leader>P   -> Last in quick list
+<leader>N   -> Prious in quick fix list
+<leader>qf   -> First in quick list
+<leader>ql   -> Last in quick list
 
 ## Maks
 m<char>     -> Set Mark
@@ -145,6 +149,8 @@ m<CHAR>     -> Set Global Mark
 <leader>fb  -> Fuzzy find buffer
 
 <leader>fh  -> Find in help
+
+<leader>fr  -> Resume last search
 
 <leader>ps  -> Find open telescope searching for word under cusor. Than you can filter by file name
 

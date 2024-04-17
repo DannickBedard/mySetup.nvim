@@ -23,13 +23,18 @@ return {
         -- Pc home
         "~/Documents/Projet/*",
         "~/Documents/Notes",
+
+        -- Pc work
+        "/viridem",
+        "/viridem/api",
+        "/project/*",
       },
     })
 
-    vim.keymap.set("n", "<leader>pf", ":Telescope neovim-project discover<CR>", {})
-    vim.keymap.set("n", "<leader>ph", ":Telescope neovim-project history<CR>", {})
-    vim.keymap.set("n", "<leader>pr", ":NeovimProjectLoadRecent<CR>", {})
-    vim.keymap.set("n", "<leader>plh", ":NeovimProjectLoadHist<CR>", {}) -- Not sure of what this do...
-    vim.keymap.set("n", "<leader>pl", ":NeovimProjectLoad<CR>", {}) -- Not sure of what this do...
+    -- vim.keymap.set("n", "<leader>pf", ":Telescope neovim-project discover<CR>", {})
+    -- vim.keymap.set("n", "<leader>ph", ":Telescope neovim-project history<CR>", {})
+    -- vim.keymap.set("n", "<leader>pr", ":NeovimProjectLoadRecent<CR>", {})
+    -- vim.keymap.set("n", "<leader>plh", ":NeovimProjectLoadHist<CR>", {}) -- Not sure of what this do...
+    -- vim.keymap.set("n", "<leader>pl", ":NeovimProjectLoad<CR>", {}) -- Not sure of what this do...
   end
 }
