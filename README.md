@@ -152,10 +152,10 @@ m<CHAR>     -> Set Global Mark
 
 <leader>fr  -> Resume last search
 
-<leader>ps  -> Find open telescope searching for word under cusor. Than you can filter by file name
+<leader>fs  -> (find string) Find open telescope searching for word under cusor. Than you can filter by file name
 
-<leader>pws  -> Open grep search then output to telescope searching for grep result. Than you can filter by file name
-<leader>pWs  -> Open grep search then output to telescope searching for grep result. Than you can filter by file name
+<leader>fw  -> (find word) Open grep search then output to telescope searching for grep result. Than you can filter by file name
+<leader>fW  -> (find WORD) Open grep search then output to telescope searching for grep result. Than you can filter by file name
 
 ## Harpoon
 

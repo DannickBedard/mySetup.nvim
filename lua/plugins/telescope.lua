@@ -53,18 +53,18 @@ return {
       end, opts)
 
       -- Open grep search then output to telescope searching for grep result. Than you can filter by file name
-      vim.keymap.set('n', '<leader>gw', function()
+      vim.keymap.set('n', '<leader>fw', function()
         local word = vim.fn.expand("<cword>")
         builtin.grep_string({ search = word })
       end)
       -- ... but whit uppercase word
-      vim.keymap.set('n', '<leader>gW', function()
+      vim.keymap.set('n', '<leader>fW', function()
         local word = vim.fn.expand("<cWORD>")
         builtin.grep_string({ search = word })
       end)
 
       -- Find open telescope searching for word under cusor. Than you can filter by file name
-      vim.keymap.set('n', '<leader>gs', function()
+      vim.keymap.set('n', '<leader>fs', function()
         builtin.grep_string({ search = vim.fn.input("Grep > ") })
       end)
 
