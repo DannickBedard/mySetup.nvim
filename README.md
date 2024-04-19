@@ -230,5 +230,5 @@ Rename something multiple time :
 Rename something multiple time : 
 \* on word afer N <action>gn than n to go to next occurence and to . to repeate the gn action
 
-Rename something multiple time : 
-\* on word afer N <action>gn than n to go to next occurence and to . to repeate the gn action
+Issue with M^ :
+:set fileformat=unix
