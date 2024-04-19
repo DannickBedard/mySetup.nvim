@@ -130,7 +130,7 @@ s<char> -> Make selection for char in the current file. (the cursor lend on the 
 <leader>q   -> Open quick fix list
 <leader>Q   -> Close quick fix list
 <leader>n   -> Next in quick fix list
-<leader>N   -> Prious in quick fix list
+<leader>N   -> Previous in quick fix list
 <leader>qf   -> First in quick list
 <leader>ql   -> Last in quick list
 

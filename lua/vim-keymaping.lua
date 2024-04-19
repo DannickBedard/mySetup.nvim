@@ -36,7 +36,7 @@ vim.keymap.set('n', '<leader>tp', ':tabp<CR>', {})
 vim.keymap.set('n', '<leader>q', ':copen<CR>', {})
 vim.keymap.set('n', '<leader>Q', ':cclose<CR>', {})
 vim.keymap.set('n', '<leader>n', ':cnext<CR>', {})
-vim.keymap.set('n', '<leader>n', ':cprev<CR>', {})
+vim.keymap.set('n', '<leader>N', ':cprev<CR>', {})
 vim.keymap.set('n', '<leader>qf', ':cfirt<CR>', {})
 vim.keymap.set('n', '<leader>ql', ':clast<CR>', {})
 
