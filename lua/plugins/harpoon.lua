@@ -81,8 +81,11 @@ return {
         }):find()
       end
 
-      vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
-        { desc = "Open harpoon window" })
+      -- This config is the best. 
+      vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+      -- Telescope does not permit the edition of the list. exept the delete whit my function
+      -- vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end, { desc = "Open harpoon window" })
 
     end
   },
