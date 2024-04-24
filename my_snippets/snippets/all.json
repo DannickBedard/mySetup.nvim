@@ -21,14 +21,14 @@
     "description": "laravel logger"
   },
 	"php": {
-		"prefix": "php",
+		"prefix": "php-balise",
 		"body": [
 			"<?php $1 ?>"
 		],
 		"description": "php tag"
 	},
   "html": {
-		"prefix": "php",
+		"prefix": "php-html",
 		"body": [
 			"?>$1<?php"
 		],

@@ -232,3 +232,11 @@ Rename something multiple time :
 
 Issue with M^ :
 :set fileformat=unix
+
+Replace but keep a instance of the selection to happend our prepend
+1234 -> BSP-1234
+:%s/\(.*\)/BSP-\1
+
+BSP-1234 -> 1234
+:%s/\(.*\)-\(.*\)/\2/g
+
