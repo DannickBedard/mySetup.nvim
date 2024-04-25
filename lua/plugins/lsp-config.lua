@@ -18,6 +18,8 @@ return {
           "intelephense",
           -- missing requirement"phpactor",
           -- missing requirement "psalm"
+          -- CSS
+          "css",
         }
       })
     end
@@ -33,9 +35,8 @@ return {
       lspconfig.tsserver.setup({})
       -- PHP
       lspconfig.intelephense.setup({})
-      lspconfig.stimulus_ls.setup({})
-      -- C#
-      lspconfig.omnisharp.setup({})
+      -- CSS
+      lspconfig.css.setup({})
       -- missing requirement lspconfig.phpactor.setup({})
       -- missing requirement lspconfig.psalm.setup({})
 
