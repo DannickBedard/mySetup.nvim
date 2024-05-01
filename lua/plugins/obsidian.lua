@@ -20,7 +20,7 @@ return {
     workspaces = {
       {
         name = "notes-home",
-        path = "~/Documents/Notes",
+        path = "C:\\Users\\Dannick.bedard\\Documents\\Notes",
       },
     },
     -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
