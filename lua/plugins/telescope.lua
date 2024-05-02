@@ -42,6 +42,13 @@ return {
       -- fb find buffer
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 
+      vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {}) -- list of previous file
+      vim.keymap.set('n', '<leader>fm', builtin.marks, {}) -- list of marks
+
+      -- quickfix
+      vim.keymap.set('n', '<leader>fq', builtin.quickfix, {})
+      vim.keymap.set('n', '<leader>fqh', builtin.quickfixhistory, {})
+
       -- fh find help
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
@@ -52,18 +59,18 @@ return {
         builtin.current_buffer_fuzzy_find({ default_text = text })
       end, opts)
 
-      -- Open grep search then output to telescope searching for grep result. Than you can filter by file name
+      -- Find open telescope searching for word under cusor. Than you can filter by file name
       vim.keymap.set('n', '<leader>fw', function()
         local word = vim.fn.expand("<cword>")
         builtin.grep_string({ search = word })
       end)
-      -- ... but whit uppercase word
+      -- ... but with W instead of w
       vim.keymap.set('n', '<leader>fW', function()
         local word = vim.fn.expand("<cWORD>")
         builtin.grep_string({ search = word })
       end)
 
-      -- Find open telescope searching for word under cusor. Than you can filter by file name
+      -- Open grep search then the output goes to telescope. Than you can filter by file name
       vim.keymap.set('n', '<leader>fs', function()
         builtin.grep_string({ search = vim.fn.input("Grep > ") })
       end)
