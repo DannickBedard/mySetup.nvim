@@ -7,6 +7,9 @@ opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
 
+opt.inccommand = "split"
+opt.formatoptions:remove "o"
+
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
@@ -40,3 +43,18 @@ vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#FB508F', bold=true })
 
 
 -- vim.api.nvim_command('autocmd CursorHold * :lua vim.lsp.buf.hover()')
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+
+local yank_group = augroup('HighlightYank', {});
+
+autocmd('TextYankPost', {
+    group = yank_group,
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = 'IncSearch',
+            timeout = 100,
+        })
+    end,
+})

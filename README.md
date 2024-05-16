@@ -179,9 +179,7 @@ m<CHAR>     -> Set Global Mark
 
 ## Neo-tree
 
-<C-n>       -> Show fileExplorer on left :Neotree filesystem reveal left<CR>
-
-<leader>bf  -> :Neotree buffers reveal float<CR>
+<leader>ft  -> (file tree) Show fileExplorer on left :Neotree filesystem reveal left<CR>
 
 H           -> while in file explore toggle hidden file
 

@@ -19,7 +19,7 @@ return {
           -- missing requirement"phpactor",
           -- missing requirement "psalm"
           -- CSS
-          "css",
+          "cssls",
         }
       })
     end
@@ -36,7 +36,7 @@ return {
       -- PHP
       lspconfig.intelephense.setup({})
       -- CSS
-      lspconfig.css.setup({})
+      lspconfig.cssls.setup({})
       -- missing requirement lspconfig.phpactor.setup({})
       -- missing requirement lspconfig.psalm.setup({})
 

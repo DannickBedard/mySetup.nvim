@@ -11,9 +11,6 @@ return {
       -- REQUIRED
 
       vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
-      -- https://github.com/ThePrimeagen/harpoon/pull/400/commits/96fb609c41e6cd4c62d96c96c3689279542994c9
-      -- vim.keymap.set("n", "<leader>a1", function() harpoon:list():replace(1) end)
-      -- vim.keymap.set("n", "<leader>a2", function() harpoon:list():replace(2) end)
       vim.keymap.set("n", "<leader>d", function() harpoon:list():remove() end)
 
       vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end)
