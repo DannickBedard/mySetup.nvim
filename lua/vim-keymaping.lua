@@ -12,25 +12,17 @@ vim.keymap.set('v', '<leader>cP', '"+P', {})
 vim.keymap.set('v', '<leader>y', '"+y', {})
 vim.keymap.set('v', 'yyp', ':co.<CR>', {}) -- Dup line wihout affecting reg
 
-
--- Down faster, overrrie join line
-vim.keymap.set('n', 'J', '5j', {})
-vim.keymap.set('n', 'K', '5k', {})
-vim.keymap.set('v', 'J', '5j', {})
-vim.keymap.set('v', 'K', '5k', {})
-
 vim.keymap.set('n', '<C-d>', '<C-d>zz', {}) -- move half page and center cursor
 vim.keymap.set('n', '<C-u>', '<C-u>zz', {}) -- move half page and center cursor
 vim.keymap.set('n', 'n', 'nzzzv', {}) -- Next result of search and center
 vim.keymap.set('n', 'N', 'Nzzzv', {}) -- Next result of search and center
 
-
 -- New join binding
-vim.keymap.set('n', '<leader>j', 'J', {})
-vim.keymap.set('n', '<leader>k', 'K', {})
-vim.keymap.set('v', '<leader>j', 'J', {})
-vim.keymap.set('v', '<leader>k', 'K', {})
-
+vim.keymap.set('n', '<leader>j', 'ddp', {})
+vim.keymap.set('n', '<leader>k', 'ddkP', {}) -- Does not work on the bottom of the file...
+-- vim.keymap.set('v', '<leader>j', 'replace...', {})
+-- vim.keymap.set('v', '<leader>k', 'replace...', {})
+--
 -- Tabs naviguation
 vim.keymap.set('n', '<leader>tt', ':tabnew %<CR>', {})
 vim.keymap.set('n', '<leader>tn', ':tabn<CR>', {})

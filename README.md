@@ -43,17 +43,13 @@ url : https://github.com/neovim/nvim-lspconfig
 
 <leader>cP  -> Past from systemClopboard ("+P)
 
-yyp         -> Duplicate line without affecting register (:co.)
+yyp         -> Duplicate line without affecting register in my setup (:co.)
 
 ddp         -> Swap line
 
-J           -> = to 5j (replace default join keymap)
+<leader>j   -> Swap current line with the one under
 
-K           -> = to 5k (replace default join keymap)
-
-<leader>j   -> override join line under
-
-<leader>k   -> override join line hover
+<leader>k   -> Swap currnet ligne with the one above (does not work preperly when at the end of the file)
 
 <leader>B   -> Enter visual block mode
 

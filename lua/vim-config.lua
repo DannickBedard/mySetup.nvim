@@ -15,7 +15,7 @@ opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
 -- cursor line
-opt.cursorline = true -- highlight the current cursor line
+-- opt.cursorline = true -- highlight the current cursor line
 
 vim.opt.wrap = false
 
@@ -26,8 +26,8 @@ opt.updatetime = 50
 
 opt.colorcolumn = "80"
 
-opt.scrolloff = 8 -- Shen scrolling there will always be 8 line on top or bottom
-opt.sidescrolloff = 8
+opt.scrolloff = 10 -- Shen scrolling there will always be 8 line on top or bottom
+opt.sidescrolloff = 10
 vim.opt.incsearch = true
 
 vim.opt.swapfile = false
@@ -37,12 +37,15 @@ vim.opt.swapfile = false
 
 -- LineNumberColore
 vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#51B3EC', bold=true })
+vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#FB508F', bold=true })
+  -- Does not seem to work ... : 
 vim.api.nvim_set_hl(0, 'LineNr', { fg='White', bold=true })
 vim.api.nvim_set_hl(0, 'CursorLineNr', { fg='White', bold=true })
-vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#FB508F', bold=true })
 
 
 -- vim.api.nvim_command('autocmd CursorHold * :lua vim.lsp.buf.hover()')
+
+-- Highlight yank selection
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
