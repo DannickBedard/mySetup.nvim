@@ -30,19 +30,23 @@
 	"php": {
 		"prefix": "php-balise",
 		"body": [
-			"<?php $1 ?>"
+			"<?php ",
+			"",
+			"$1",
+			"",
+			"?>"
 		],
 		"description": "php tag"
 	},
   "html": {
-		"prefix": "php-html",
+		"prefix": "htmlphp",
 		"body": [
 			"?>$1<?php"
 		],
 		"description": "ouverture d'un html dans du php"
 	},
 	"snip2": {
-		"prefix": "all2",
+		"prefix": "z2",
 		"body": [
 			"multi $1",
 			"line $2",

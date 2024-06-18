@@ -15,3 +15,7 @@ require("vim-config")
 require("vim-keymaping")
 
 require("lazy").setup("plugins")
+
+-- TEST tings
+-- asdfasdf
+-- asdfjlkasdj
