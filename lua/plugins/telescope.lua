@@ -38,6 +38,13 @@ return {
         local text = vim.getVisualSelection()
         builtin.live_grep({ default_text = text })
       end, opts)
+      
+      --  fh find help
+      vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+      vim.keymap.set('v', '<leader>fh', function()
+        local text = vim.getVisualSelection()
+        builtin.help_tags({ default_text = text })
+      end, opts)
 
       -- fb find buffer
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
