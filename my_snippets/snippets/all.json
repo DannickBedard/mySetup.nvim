@@ -39,7 +39,7 @@
 		"description": "php tag"
 	},
   "html": {
-		"prefix": "htmlphp",
+		"prefix": "phpClosing",
 		"body": [
 			"?>$1<?php"
 		],
