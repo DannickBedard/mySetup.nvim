@@ -31,6 +31,9 @@ return {
         local text = vim.getVisualSelection()
         builtin.find_files({ default_text = text })
       end, opts)
+      vim.keymap.set('n', '<leader>fhf', function()
+        builtin.find_files({ hidden = true })
+      end, opts)
 
       -- fg find global
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
@@ -38,7 +41,10 @@ return {
         local text = vim.getVisualSelection()
         builtin.live_grep({ default_text = text })
       end, opts)
-      
+      vim.keymap.set('n', '<leader>fhg', function()
+        builtin.live_grep({ hidden = true })
+      end, opts)
+
       --  fh find help
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
       vim.keymap.set('v', '<leader>fh', function()
@@ -55,9 +61,6 @@ return {
       -- quickfix
       vim.keymap.set('n', '<leader>fq', builtin.quickfix, {})
       vim.keymap.set('n', '<leader>fqh', builtin.quickfixhistory, {})
-
-      -- fh find help
-      vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
       -- fif find in file
       vim.keymap.set('n', '<leader>fif', builtin.current_buffer_fuzzy_find, {})

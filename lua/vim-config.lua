@@ -36,13 +36,18 @@ vim.opt.swapfile = false
 -- à voir si c'est pertinent --vim.opt.undofile = true
 
 -- LineNumberColore
-vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#51B3EC', bold=true })
-vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#FB508F', bold=true })
+vim.api.nvim_set_hl(0, 'LineNrAbove', { bold=true })
+vim.api.nvim_set_hl(0, 'LineNrBelow', { bold=true })
   -- Does not seem to work ... : 
 vim.api.nvim_set_hl(0, 'LineNr', { fg='White', bold=true })
 vim.api.nvim_set_hl(0, 'CursorLineNr', { fg='White', bold=true })
 
 
+-- Enable true colors
+vim.opt.termguicolors = true
+
+-- Enable cursorline to highlight the current line
+vim.opt.cursorline = true
 -- vim.api.nvim_command('autocmd CursorHold * :lua vim.lsp.buf.hover()')
 
 -- Highlight yank selection

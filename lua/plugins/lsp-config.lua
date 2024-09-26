@@ -37,15 +37,19 @@ return {
       lspconfig.intelephense.setup({})
       -- CSS
       lspconfig.cssls.setup({})
+
+      -- C#
+      lspconfig.csharp_ls.setup({})
+      lspconfig.omnisharp.setup({})
+
       -- missing requirement lspconfig.phpactor.setup({})
       -- missing requirement lspconfig.psalm.setup({})
 
       -- Global mappings.
       -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-      -- TODO :: Remap those. Disable for now because i don't know how to use it
-      -- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-      -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-      -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+      vim.keymap.set('n', '<leader>dh', vim.diagnostic.open_float)
+      vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next) -- Navigate throw lsp error, warn
+      vim.keymap.set('n', '<leader>dN', vim.diagnostic.goto_prev)
       -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
       -- Use LspAttach autocommand to only map the following keys

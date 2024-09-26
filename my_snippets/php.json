@@ -1,0 +1,9 @@
+{
+  "logger": {
+    "prefix": "@vlogger",
+    "body": [
+      "\\viridem\\logger\\ViridemLogger::getLogger(__CLASS__)->info('DANNICK-' . var_dump_return($1));"
+    ],
+    "description": "Template de base d'un log dans Viridem."
+  },
+}

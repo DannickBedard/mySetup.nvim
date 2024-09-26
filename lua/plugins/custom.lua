@@ -1,3 +1,8 @@
+
+local isValid = false
+
+if isValid then
+  
 return {
   dir = "~/.config/nvimPlug/test.nvim",
   config = function ()
@@ -5,4 +10,7 @@ return {
     require("test").setup({name = "Dannick"});
   end
 }
+else
+  return {}
+end
 

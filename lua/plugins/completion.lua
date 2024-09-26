@@ -64,6 +64,17 @@ return {
         capabilities = capabilities
       })
 
+      lspconfig.csharp_ls.setup({
+        capabilities = capabilities
+      })
+
+      lspconfig.omnisharp.setup({
+        capabilities = capabilities
+      })
+
+
+
+
     end
   },
 }

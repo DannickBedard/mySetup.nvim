@@ -13,6 +13,13 @@
     ],
     "description": "Template de base d'un log dans Viridem."
   },
+  "sm-logger": {
+    "prefix": "@vlog",
+    "body": [
+      "\\viridem\\logger\\ViridemLogger::getLogger(__CLASS__)->info('DANNICK-' . var_dump_return($1));"
+    ],
+    "description": "Template de base d'un log dans Viridem."
+  },
   "wordpresslogger": {
     "prefix": "wordpress-logger",
     "body": [
@@ -38,12 +45,38 @@
 		],
 		"description": "php tag"
 	},
-  "html": {
-		"prefix": "phpClosing",
+	"phpVar": {
+		"prefix": "@var",
 		"body": [
-			"?>$1<?php"
+			"/** @var $1 */"
 		],
-		"description": "ouverture d'un html dans du php"
+		"description": "php var tag"
+	},
+	"phpHeaderComment": {
+		"prefix": "@comment",
+		"body": [
+			"/**",
+			" * $1",
+			" * ",
+			" * @param type $variable",
+			" * @return void",
+			" */"
+		],
+		"description": "php var tag"
+	},
+	"phpHeaderCommentParams": {
+		"prefix": "@param",
+		"body": [
+			" @param type $1"
+		],
+		"description": "php param doc tag"
+	},
+	"phpHeaderCommentReturn": {
+		"prefix": "@return",
+		"body": [
+			" @return $1"
+		],
+		"description": "php return doc tag"
 	},
 	"snip2": {
 		"prefix": "z2",
