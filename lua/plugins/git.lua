@@ -4,9 +4,13 @@ return {
     config = function ()
       require('gitblame').setup {
         --Note how the `gitblame_` prefix is omitted in `setup`
-        enabled = true,
+        enabled = false,
         gitblame_message_template =  '<date> • <author> • <sha>'
       }
+
+
+
+vim.keymap.set('n', '<leader>gb', ':GitBlameToggle<CR>', {})
 
     end
   }

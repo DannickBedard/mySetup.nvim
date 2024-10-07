@@ -51,3 +51,14 @@ vim.keymap.set("n", "Q", "<nop>") -- seem like Q goes to dark place
 
 vim.keymap.set('n', '<leader>B', '<C-V>', {}) -- Enter visual block
 vim.keymap.set('v', '<leader>B', '<C-V>', {})
+
+-- Quote shurtcut
+vim.keymap.set('n', 'ciq', 'ci"', {})
+vim.keymap.set('n', 'diq', 'di"', {})
+vim.keymap.set('n', 'yiq', 'yi"', {})
+vim.keymap.set('n', 'viq', 'vi"', {})
+vim.keymap.set('n', 'caq', 'ca"', {})
+vim.keymap.set('n', 'daq', 'da"', {})
+vim.keymap.set('n', 'yaq', 'ya"', {})
+vim.keymap.set('n', 'vaq', 'va"', {})
+

@@ -11,10 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("vim-config")
-require("vim-keymaping")
-
+vim.g.mapleader = " "
 require("lazy").setup("plugins")
+
+require("vim-keymaping")
+require("vim-config")
+
 
 -- TEST tings
 -- asdfasdf

@@ -14,19 +14,15 @@ opt.formatoptions:remove "o"
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
--- cursor line
--- opt.cursorline = true -- highlight the current cursor line
-
 vim.opt.wrap = false
 
-vim.g.mapleader = " "
 
 
 opt.updatetime = 50
 
 opt.colorcolumn = "80"
 
-opt.scrolloff = 10 -- Shen scrolling there will always be 8 line on top or bottom
+opt.scrolloff = 10 -- When scrolling there will always be 8 line on top or bottom
 opt.sidescrolloff = 10
 vim.opt.incsearch = true
 
@@ -40,7 +36,8 @@ vim.api.nvim_set_hl(0, 'LineNrAbove', { bold=true })
 vim.api.nvim_set_hl(0, 'LineNrBelow', { bold=true })
   -- Does not seem to work ... : 
 vim.api.nvim_set_hl(0, 'LineNr', { fg='White', bold=true })
-vim.api.nvim_set_hl(0, 'CursorLineNr', { fg='White', bold=true })
+vim.api.nvim_set_hl(0, 'CursorLineNr', { bg='#3e3f40' })
+vim.api.nvim_set_hl(0, 'CursorLine', { bg='#3e3f40' })
 
 
 -- Enable true colors
@@ -66,3 +63,7 @@ autocmd('TextYankPost', {
         })
     end,
 })
+
+
+
+vim.opt.guicursor = "n-v-i-c:block"
