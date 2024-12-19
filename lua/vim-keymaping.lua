@@ -1,16 +1,13 @@
 -- Paste yank
-vim.keymap.set('n', '<leader>p', '"0p', {})
-vim.keymap.set('n', '<leader>P', '"0P', {})
-vim.keymap.set('n', '<leader>cp', '"+p', {})
-vim.keymap.set('n', '<leader>cP', '"+P', {})
-vim.keymap.set('n', 'yyp', ':co.<CR>', {}) -- Dup line wihout affecting reg
+vim.keymap.set({'n', "v"} , '<leader>p', '"0p', {})
+vim.keymap.set({'n', "v"} , '<leader>P', '"0P', {})
+vim.keymap.set({'n', "v"} , '<leader>cp', '"+p', {})
+vim.keymap.set({'n', "v"} , '<leader>cP', '"+P', {})
+vim.keymap.set({'n'} , '<leader>dirp', '"%p', {})
+vim.keymap.set({'n'} , '<leader>dirP', '"%P', {})
+vim.keymap.set({'n', "v"} , 'yyp', ':co.<CR>', {}) -- Dup line wihout affecting reg
 
-vim.keymap.set('v', '<leader>p', '"0p', {})
-vim.keymap.set('v', '<leader>P', '"0P', {})
-vim.keymap.set('v', '<leader>cp', '"+p', {})
-vim.keymap.set('v', '<leader>cP', '"+P', {})
 vim.keymap.set('v', '<leader>y', '"+y', {})
-vim.keymap.set('v', 'yyp', ':co.<CR>', {}) -- Dup line wihout affecting reg
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', {}) -- move half page and center cursor
 vim.keymap.set('n', '<C-u>', '<C-u>zz', {}) -- move half page and center cursor
@@ -20,17 +17,11 @@ vim.keymap.set('n', 'N', 'Nzzzv', {}) -- Next result of search and center
 -- New join binding
 vim.keymap.set('n', '<leader>j', 'ddp', {})
 vim.keymap.set('n', '<leader>k', 'ddkP', {}) -- Does not work on the bottom of the file...
--- vim.keymap.set('v', '<leader>j', 'replace...', {})
--- vim.keymap.set('v', '<leader>k', 'replace...', {})
---
--- Tabs naviguation
-vim.keymap.set('n', '<leader>tt', ':tabnew %<CR>', {})
-vim.keymap.set('n', '<leader>tn', ':tabn<CR>', {})
-vim.keymap.set('n', '<leader>tp', ':tabp<CR>', {})
 
-vim.keymap.set('v', '<leader>tt', ':tabnew %<CR>', {})
-vim.keymap.set('v', '<leader>tn', ':tabn<CR>', {})
-vim.keymap.set('v', '<leader>tp', ':tabp<CR>', {})
+-- Tabs naviguation
+vim.keymap.set({'n', 'v'}, '<leader>tt', ':tabnew %<CR>', {})
+vim.keymap.set({'n', 'v'}, '<leader>tn', ':tabn<CR>', {})
+vim.keymap.set({'n', 'v'}, '<leader>tp', ':tabp<CR>', {})
 
 -- Quick fix
 vim.keymap.set('n', '<leader>q', ':copen<CR>', {})
@@ -49,10 +40,9 @@ vim.keymap.set("v", "<leader>S", ":split<CR>", {})
 -- other
 vim.keymap.set("n", "Q", "<nop>") -- seem like Q goes to dark place
 
-vim.keymap.set('n', '<leader>B', '<C-V>', {}) -- Enter visual block
-vim.keymap.set('v', '<leader>B', '<C-V>', {})
+vim.keymap.set({'n', 'v'}, '<leader>B', '<C-V>', {}) -- Enter visual block
 
--- Quote shurtcut
+-- double quote shurtcut
 vim.keymap.set('n', 'ciq', 'ci"', {})
 vim.keymap.set('n', 'diq', 'di"', {})
 vim.keymap.set('n', 'yiq', 'yi"', {})

@@ -39,9 +39,11 @@ url : https://github.com/neovim/nvim-lspconfig
 
 <leader>y   -> Yank to systemClipboard ("+y)
 
-<leader>cp  -> Past from systemClopboard ("+p)
+<leader>cp  -> Paste from systemClopboard ("+p)
 
-<leader>cP  -> Past from systemClopboard ("+P)
+<leader>cP  -> Paste from systemClopboard ("+P)
+
+<leader>dirp -> Paste current dir ("%p)
 
 yyp         -> Duplicate line without affecting register in my setup (:co.)
 
@@ -62,6 +64,16 @@ gv          -> Go to previous selection
 <leader>s   -> Split vertical
 
 <leader>S   -> Split horizontal
+
+ciq         -> ci"
+ciq         -> ci"
+diq         -> di"
+yiq         -> yi"
+viq         -> vi"
+caq         -> ca"
+daq         -> da"
+yaq         -> ya"
+vaq         -> va"
 
 ## Insert mode action
 
@@ -233,4 +245,3 @@ Replace but keep a instance of the selection to happend our prepend
 
 BSP-1234 -> 1234
 :%s/\(.*\)-\(.*\)/\2/g
-

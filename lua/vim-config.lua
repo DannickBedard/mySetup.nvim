@@ -64,6 +64,5 @@ autocmd('TextYankPost', {
     end,
 })
 
-
-
+-- Make cursor block always... to be more the same as vim
 vim.opt.guicursor = "n-v-i-c:block"
