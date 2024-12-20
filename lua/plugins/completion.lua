@@ -65,6 +65,10 @@ return {
         capabilities = capabilities
       })
 
+      lspconfig.jdtls.setup({
+        capabilities = capabilities
+      })
+
       lspconfig.csharp_ls.setup({
         capabilities = capabilities
       })

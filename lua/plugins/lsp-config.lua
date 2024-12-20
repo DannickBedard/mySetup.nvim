@@ -20,6 +20,7 @@ return {
           -- missing requirement "psalm"
           -- CSS
           "cssls",
+          "jdtls",
         }
       })
     end
@@ -41,6 +42,8 @@ return {
       -- C#
       lspconfig.csharp_ls.setup({})
       lspconfig.omnisharp.setup({})
+      -- javas
+      lspconfig.jdtls.setup({})
 
       -- missing requirement lspconfig.phpactor.setup({})
       -- missing requirement lspconfig.psalm.setup({})
