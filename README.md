@@ -185,6 +185,13 @@ m<CHAR>     -> Set Global Mark
 
 <leader>gf  -> Format entire file
 
+## Comment.nvim
+
+gcc         -> comment current line or de-comment   
+gbc         -> Toggle the current line using blockwise comment
+gc          -> visual mode : Toggles the region using linewise comment
+gb          -> visual mode : Toggles the region using blockwise comments 
+
 ## Neo-tree
 
 <leader>ft  -> (file tree) Show fileExplorer on left :Neotree filesystem reveal left<CR>

@@ -9,15 +9,11 @@ return   {
   opts = {
     filesystem = {
       filtered_items = {
-        -- visible = true,
         show_hidden_count = true,
         hide_dotfiles = true,
-        hide_gitignored = false, 
-        -- hide_hidden = false,
+        hide_gitignored = false,
+        hide_hidden = false,
         hide_by_name = {
-          -- '.git',
-          -- '.DS_Store',
-          -- 'thumbs.db',
         },
         never_show = {},
       },
@@ -26,6 +22,5 @@ return   {
   },
   config = function()
     vim.keymap.set("n", "<leader>ft", ":Neotree filesystem reveal left<CR>", {})
-    -- vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
   end,
 }
