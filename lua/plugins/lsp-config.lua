@@ -53,6 +53,8 @@ return {
       vim.keymap.set('n', '<leader>dh', vim.diagnostic.open_float)
       vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next) -- Navigate throw lsp error, warn
       vim.keymap.set('n', '<leader>dN', vim.diagnostic.goto_prev)
+
+      vim.keymap.set('n', '<leader>dq', vim.diagnostic.setqflist)
       -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
       -- Use LspAttach autocommand to only map the following keys
@@ -73,6 +75,8 @@ return {
           vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
           vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
           vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
+          -- Put in quickfix list outgoing_calls
+          vim.keymap.set('n', '<leader>oc', vim.lsp.buf.outgoing_calls, opts)
           vim.keymap.set('n', '<leader>wl', function()
             print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
           end, opts)

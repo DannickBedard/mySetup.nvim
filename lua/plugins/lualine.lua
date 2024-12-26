@@ -15,14 +15,15 @@ return {
       sections = {
         lualine_a = {{"mode", separator = {right = rightRounded, left = leftRounded}}},
         lualine_z = {{"location", separator = {right = rightRounded, left = leftRounded}}},
-        lualine_c = { "filename",           {
-          "harpoon2",
-          icon = "󰀱 ",
-          indicators = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
-          active_indicators = { "[1]", "[2]", "[3]", "[4]", "[5]", "[6]", "[7]", "[8]", "[9]" },
-          _separator = " ",
-          no_harpoon = "Harpoon not loaded",
-        },
+        lualine_c = { "filename",
+          -- {
+          --   "harpoon2",
+          --   icon = "󰀱 ",
+          --   indicators = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+          --   active_indicators = { "[1]", "[2]", "[3]", "[4]", "[5]", "[6]", "[7]", "[8]", "[9]" },
+          --   _separator = " ",
+          --   no_harpoon = "Harpoon not loaded",
+          -- },
           { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available}
         },
         lualine_x = {'searchcount', 'encoding', 'fileformat', 'filetype'}

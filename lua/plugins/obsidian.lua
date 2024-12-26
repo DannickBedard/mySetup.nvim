@@ -16,26 +16,23 @@ return {
 
     -- see below for full list of optional dependencies 👇
   },
-  opts = {
-    workspaces = {
-      {
-        name = "notes-home",
-        path = "C:\\Users\\Dannick.bedard\\Documents\\Notes",
-      },
-    },
-    -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
-  completion = {
-    -- Set to false to disable completion.
-    nvim_cmp = true,
-    -- Trigger completion at 2 chars.
-    min_chars = 2,
-  },
-
-    -- see below for full list of options 👇
-  },
   config = function ()
-    local obsidian = require("obsidian");
-    local obsidianUtils = obsidian.util;
-      --vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
+    require("obsidian").setup({
+      workspaces = {
+        {
+          name = "notes-home",
+          path = vim.fn.expand("~/Documents/Notes"),
+        },
+      },
+      -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
+      completion = {
+        -- Set to false to disable completion.
+        nvim_cmp = true,
+        -- Trigger completion at 2 chars.
+        min_chars = 2,
+      },
+
+      -- see below for full list of options 👇
+    })
   end
 }
