@@ -14,19 +14,17 @@ opt.formatoptions:remove "o"
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
-vim.opt.wrap = false
-
-
+opt.wrap = false -- Prevent wrapping when line too long
 
 opt.updatetime = 50
 
-opt.colorcolumn = "80"
+opt.colorcolumn = "80" -- Add line at 80 char
 
-opt.scrolloff = 10 -- When scrolling there will always be 8 line on top or bottom
-opt.sidescrolloff = 10
-vim.opt.incsearch = true
+opt.scrolloff = 10 -- When scrolling there will always be 10 line on top or bottom
+opt.sidescrolloff = 10 -- ... same but side way
+opt.incsearch = true
 
-vim.opt.swapfile = false
+opt.swapfile = false
 -- à voir si c'est pertinent -- vim.opt.backup = false
 -- à voir si c'est pertinent --vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 -- à voir si c'est pertinent --vim.opt.undofile = true
@@ -41,11 +39,11 @@ vim.api.nvim_set_hl(0, 'CursorLine', { bg='#3e3f40' })
 
 
 -- Enable true colors
-vim.opt.termguicolors = true
+opt.termguicolors = true
 
 -- Enable cursorline to highlight the current line
-vim.opt.cursorline = true
--- vim.api.nvim_command('autocmd CursorHold * :lua vim.lsp.buf.hover()')
+opt.cursorline = true
+-- vim.api.nvim_command('autocmd CursorHold * :lua vim.lsp.buf.hover()') -- When stoping it will triger hover help
 
 -- Highlight yank selection
 local augroup = vim.api.nvim_create_augroup
