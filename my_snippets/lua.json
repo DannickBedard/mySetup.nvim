@@ -4,5 +4,13 @@
 		"body": [
 			"lualualua"
 		]
+	},
+	"snip2": {
+		"prefix": "wow",
+		"body": [
+			"lualualua${1|test,wow,yeah|}",
+			"lualualua$2",
+			"lualualua$3"
+		]
 	}
 }
