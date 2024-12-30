@@ -10,7 +10,8 @@ return {
     require('lualine').setup({
       options = {
         component_separators = "",
-        section_separators = { left = rightRounded, right = leftRounded }
+        section_separators = { left = rightRounded, right = leftRounded },
+        globalstatus = false,
       },
       sections = {
         lualine_a = {{"mode", separator = {right = rightRounded, left = leftRounded}}},
@@ -35,15 +36,25 @@ return {
         lualine_x = {},
         lualine_y = {{'branch', separator = {right = rightRounded, left = leftRounded}}},
         lualine_z = {}
-        },
-        winbar = {
-          -- lualine_a = {'filename'},
-          lualine_b = {{'filename', path = 1}},
-          lualine_c = {},
-          lualine_x = {},
-          -- lualine_y = {'progress'},
-          -- lualine_z = {'location'}
-        }
+      },
+      winbar = {
+        -- lualine_a = {'filename'},
+        lualine_b = {{'filename', path = 3}},
+        lualine_c = {},
+        lualine_x = {},
+        -- lualine_y = {'progress'},
+        -- lualine_z = {'location'}
+      },
+      inactive_sections = {
+        lualine_z = {{"location", separator = {right = rightRounded, left = leftRounded}}},
+        lualine_c = {{'filename', path = 1}},
+        lualine_x = {'searchcount', 'encoding', 'fileformat', 'filetype'}
+      },
+      inactive_winbar = {
+        lualine_b = {{'filename', path = 3}},
+        lualine_c = {},
+        lualine_x = {},
+      }
     })
   end
 }

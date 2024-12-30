@@ -16,7 +16,7 @@
   "sm-logger": {
     "prefix": "@vlog",
     "body": [
-      "\\viridem\\logger\\ViridemLogger::getLogger(__CLASS__)->info('DANNICK-' . var_dump_return($1));"
+      "\\viridem\\logger\\ViridemLogger::getLogger(__CLASS__)->info('DANNICK-$2' . var_dump_return($1));"
     ],
     "description": "Template de base d'un log dans Viridem."
   },
@@ -67,7 +67,7 @@
 	"phpHeaderCommentParams": {
 		"prefix": "@param",
 		"body": [
-			" @param type $1"
+			" @param $2 $1"
 		],
 		"description": "php param doc tag"
 	},
@@ -77,13 +77,5 @@
 			" @return $1"
 		],
 		"description": "php return doc tag"
-	},
-	"snip2": {
-		"prefix": "z2",
-		"body": [
-			"multi $1",
-			"line $2",
-			"snippet$0"
-		]
 	}
 }

@@ -24,6 +24,7 @@ return {
       end
 
       local opts = { noremap = true, silent = true }
+      local allFileArgs = function() return { "--hidden", "--no-ignore" } end
 
       -- ff stand for find file
       vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -32,7 +33,7 @@ return {
         builtin.find_files({ default_text = text })
       end, opts)
       vim.keymap.set('n', '<leader>fhf', function()
-        builtin.find_files({ hidden = true })
+        builtin.find_files({ hidden = true , no_ignore = true, no_ignore_parent = true})
       end, opts)
 
       -- fg find global
@@ -42,7 +43,11 @@ return {
         builtin.live_grep({ default_text = text })
       end, opts)
       vim.keymap.set('n', '<leader>fhg', function()
-        builtin.live_grep({ hidden = true })
+        builtin.live_grep({ hidden = true, additional_args = allFileArgs })
+      end, opts)
+      vim.keymap.set('v', '<leader>fhg', function()
+        local text = vim.getVisualSelection()
+        builtin.live_grep({ hidden = true,  default_text = text , additional_args = allFileArgs })
       end, opts)
 
       --  fh find help

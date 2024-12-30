@@ -1,5 +1,7 @@
 # mySetup.nvim
 
+Started using vim in feburary 2024
+
 ## Theme
 One dark pro : https://github.com/olimorris/onedarkpro.nvim
 
@@ -128,9 +130,7 @@ s<char> -> Make selection for char in the current file. (the cursor lend on the 
 ## Tabs navigation
 
 <leader>tt -> New tabs with the current page (:tabnew %<CR>)
-
 <leader>tn   -> Next tabs (:tabn<CR>)
-
 <leader>tp   -> Previous tabs (:tabp<CR>)
 
 ## Quicks fix list
@@ -143,10 +143,35 @@ s<char> -> Make selection for char in the current file. (the cursor lend on the 
 <leader>ql   -> Last in quick list
 
 ## Maks
+
 m<char>     -> Set Mark
 '<char>     -> Get Mark
 m<CHAR>     -> Set Global Mark
 '<CHAR>     -> Get Global Mark
+
+## LSP navigation / keymap
+
+<leader>dh  -> Open diagnostic in floting window
+<leader>dn  -> Naviagte to next diagnostic
+<leader>dN  -> Naviagte to previous diagnostic
+<leader>dq  -> Put all diagnostic to quickfix list
+
+gd          -> Go to definition
+gD          -> Go to declaration
+<leader>h   -> Open lsp hover info
+gi          -> Gi to implementation
+<C-k>          -> signature_help ??
+<leader>wa  -> Add workspace folder
+<leader>wr  -> Remove workspace folder
+<leader>wl  -> Liast workspace folders
+<leader>oc  -> outgoing_calls
+<leader>D   -> type_definition
+<leader>rn  -> rename
+<leader>ca  -> Code actions
+gr          -> references
+<leader>f   -> format
+
+
 
 ## Telescope
 
@@ -202,10 +227,6 @@ H           -> while in file explore toggle hidden file
 ## oil
 
 \-           -> Open current directory to edition un buffer
-
-## lsp
-
-todo...
 
 ## Completion
 
