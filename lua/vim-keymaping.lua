@@ -52,3 +52,10 @@ vim.keymap.set('n', 'daq', 'da"', {})
 vim.keymap.set('n', 'yaq', 'ya"', {})
 vim.keymap.set('n', 'vaq', 'va"', {})
 
+
+vim.api.nvim_set_keymap(
+    'n',
+    '<leader>gbp',
+    [[:lua vim.cmd('read !git branch --show-current')<CR>]],
+    { noremap = true, silent = true }
+)
