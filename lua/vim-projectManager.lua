@@ -1,3 +1,9 @@
+-- TODO
+-- - [ ] When in telescope, can make keybind to open in tab, split and vsplit and current window...
+-- - [ ] Keybind(like juste op, keep the opv, opV, opt, opw) that open telescope chose a project and another prompt to select where to put it...
+-- Notes
+-- kaymap op stand for open project, the letter after are the mode to enter
+
 local pickers = require("telescope.pickers")
 local finders = require("telescope.finders")
 local actions = require("telescope.actions")
@@ -9,7 +15,7 @@ local projects = {
   { name = "Notes", path = "~/Documents/Notes" },
   { name = "Viridem", path = "c:/viridem" },
   { name = "Nvim", path = "~/AppData/Local/nvim" },
-  { name = "Local project", path = "c:/project" },
+  { name = "Local project", path = "c:/projects" },
   { name = "config user", path = "~/" },
 }
 
@@ -34,9 +40,10 @@ local function projectPicker(actionWithPath)
       actions.select_default:replace(function(prompt_bufnr)
         local selection = action_state.get_selected_entry(prompt_bufnr)
         local path = vim.fn.expand(selection.value.path)
+        local name = vim.fn.expand(selection.value.name)
         actions.close(prompt_bufnr)
 
-        actionWithPath(path)
+        actionWithPath(path, name)
       end)
       return true
     end,
@@ -44,15 +51,16 @@ local function projectPicker(actionWithPath)
 end
 
 local function open_project_in_new_tab()
-  projectPicker(function (path)
+  projectPicker(function (path, name)
     vim.cmd("tabnew")              -- Open a vertical split
     vim.cmd("lcd " .. path)         -- Set the local working directory for the new split
     vim.cmd("edit .")
+    vim.cmd("LualineRenameTab " .. name) -- Rename tab for the current project
   end)
 end
 
 local function open_project_in_vsplit()
-  projectPicker(function (path)
+  projectPicker(function (path, name)
     vim.cmd("vsplit")
     vim.cmd("wincmd l")            -- Move to the newly created split
     vim.cmd("lcd " .. path)
@@ -61,7 +69,7 @@ local function open_project_in_vsplit()
 end
 
 local function open_project_in_split()
-  projectPicker(function (path)
+  projectPicker(function (path, name)
     vim.cmd("split")
     vim.cmd("wincmd l")            -- Move to the newly created split
     vim.cmd("lcd " .. path)
@@ -70,9 +78,10 @@ local function open_project_in_split()
 end
 
 local function open_project_in_current_window()
-  projectPicker(function (path)
+  projectPicker(function (path, name)
     vim.cmd("lcd " .. path)
     vim.cmd("edit .") -- Open the file browser in the project directory
+    vim.cmd("LualineRenameTab " .. name) -- Rename tab for the current project
   end)
 end
 
