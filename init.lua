@@ -16,4 +16,3 @@ require("lazy").setup("plugins")
 
 require("vim-keymaping")
 require("vim-config")
-require("vim-projectManager")
