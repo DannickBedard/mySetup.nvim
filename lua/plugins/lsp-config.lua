@@ -32,23 +32,31 @@ return {
       local lspconfig = require('lspconfig')
       local util = require 'lspconfig.util'
 
+
+      --
+      --
+      -- SEE completion.lua for the setup... 
+      -- If setup call two time the second will override the first one...
+      --
+      --
+
       -- LUA
-      lspconfig.lua_ls.setup({})
+      -- lspconfig.lua_ls.setup({})
 
       -- JS
-      lspconfig.tsserver.setup({})
+      -- lspconfig.tsserver.setup({})
 
       -- PHP
-      lspconfig.intelephense.setup({ cmd = {"intelephense", "--stdio" }, root_dir = lspconfig.util.root_pattern(".git") })
+      -- lspconfig.intelephense.setup({ cmd = {"intelephense", "--stdio" }, root_dir = lspconfig.util.root_pattern(".git") })
       -- CSS
-      lspconfig.cssls.setup({})
+      -- lspconfig.cssls.setup({})
 
       -- C#
-      lspconfig.csharp_ls.setup({})
-      lspconfig.omnisharp.setup({})
+      -- lspconfig.csharp_ls.setup({})
+      -- lspconfig.omnisharp.setup({})
 
       -- javas
-      lspconfig.jdtls.setup({})
+      --lspconfig.jdtls.setup({})
 
       -- missing requirement lspconfig.phpactor.setup({})
       -- missing requirement lspconfig.psalm.setup({})

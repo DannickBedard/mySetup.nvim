@@ -28,7 +28,10 @@ return {
     config = function()
       local cmp = require'cmp'
 
+      local util = require 'lspconfig.util'
+
       require("luasnip.loaders.from_vscode").load({paths = "./my_snippets"})
+
       cmp.setup({
         snippet = {
           expand = function(args)
@@ -63,7 +66,13 @@ return {
       })
 
       lspconfig.intelephense.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+        cmd = { 'intelephense', '--stdio' },
+        filetypes = { 'php' },
+        root_dir = function(pattern)
+          local cwd = vim.loop.cwd() -- current root dir
+          return cwd
+        end,
       })
 
       lspconfig.psalm.setup({
