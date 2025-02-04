@@ -13,6 +13,7 @@ if isValid then
         { name = "Nvim-local", path = "~/AppData/Local/nvim-local" },
         { name = "Local project", path = "c:/projects" },
         { name = "config user", path = "~/" },
+        { name = "Viridem Worktree", path = "~/viridem-worktree" },
       }
 
       local keymaps = {

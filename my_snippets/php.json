@@ -3,7 +3,13 @@
     "prefix": "@vlogger",
     "body": [
       "\\viridem\\logger\\ViridemLogger::getLogger(__CLASS__)->info('DANNICK-' . var_dump_return($1));"
-    ],
-    "description": "Template de base d'un log dans Viridem."
+    ]
   },
+
+  "bracktrace-logger": {
+    "prefix": "@backtrace",
+    "body": [
+      "\\viridem\\logger\\ViridemLogger::getLogger(__CLASS__)->info('DANNICK-backtrace-' . var_dump_return(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS))); "
+    ]
+  }
 }

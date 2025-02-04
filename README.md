@@ -63,10 +63,6 @@ gv          -> Go to previous selection
 
 <C-6>       -> Alternative file nav
 
-<leader>s   -> Split vertical
-
-<leader>S   -> Split horizontal
-
 ciq         -> ci"
 ciq         -> ci"
 diq         -> di"
@@ -76,6 +72,26 @@ caq         -> ca"
 daq         -> da"
 yaq         -> ya"
 vaq         -> va"
+
+## splits
+<leader>s   -> Split vertical
+
+<leader>S   -> Split horizontal
+<c-w>o      -> Remove all split but keep the current window open
+<c-w>=      -> Make all the split equal
+<c-w>|      -> Make the current window wider horizontal
+<c-w>_      -> Make the current window wider vertical
+
+## Fold
+
+zf{motion}  -> Fold current line to the motions
+{Visual}zf  -> Fold the current selection
+za          -> toggle fold under cursor
+
+zo          -> Open the fold under cursor
+zO          -> Open all fold
+zc          -> close fold under cursor
+zC          -> Close all fold
 
 ## Insert mode action
 
@@ -129,9 +145,9 @@ s<char> -> Make selection for char in the current file. (the cursor lend on the 
 
 ## Tabs navigation
 
-<leader>tt -> New tabs with the current page (:tabnew %<CR>)
-<leader>tn   -> Next tabs (:tabn<CR>)
-<leader>tp   -> Previous tabs (:tabp<CR>)
+<leader>tt  -> New tabs with the current page (:tabnew %<CR>)
+gt          -> Next tabs 
+gT          -> Previous tabs 
 
 ## Quicks fix list
 

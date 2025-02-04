@@ -15,7 +15,8 @@ return {
           -- JS
           "tsserver",
           -- PHP
-          "intelephense",
+         -- "intelephense",
+          -- "phpactor",
           -- missing requirement"phpactor",
           -- missing requirement "psalm"
           -- CSS
@@ -29,19 +30,23 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require('lspconfig')
+      local util = require 'lspconfig.util'
 
       -- LUA
       lspconfig.lua_ls.setup({})
+
       -- JS
       lspconfig.tsserver.setup({})
+
       -- PHP
-      lspconfig.intelephense.setup({})
+      lspconfig.intelephense.setup({ cmd = {"intelephense", "--stdio" }, root_dir = lspconfig.util.root_pattern(".git") })
       -- CSS
       lspconfig.cssls.setup({})
 
       -- C#
       lspconfig.csharp_ls.setup({})
       lspconfig.omnisharp.setup({})
+
       -- javas
       lspconfig.jdtls.setup({})
 

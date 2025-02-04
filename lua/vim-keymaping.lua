@@ -19,9 +19,9 @@ vim.keymap.set('n', '<leader>j', 'ddp', {})
 vim.keymap.set('n', '<leader>k', 'ddkP', {}) -- Does not work on the bottom of the file...
 
 -- Tabs naviguation
-vim.keymap.set({'n', 'v'}, '<leader>tt', ':tabnew %<CR>', {})
-vim.keymap.set({'n', 'v'}, '<leader>tn', ':tabn<CR>', {})
-vim.keymap.set({'n', 'v'}, '<leader>tp', ':tabp<CR>', {})
+vim.keymap.set({'n', 'v'}, '<leader>tt', ':tabnew %<CR>', {}) 
+-- vim.keymap.set({'n', 'v'}, '<leader>tn', ':tabn<CR>', {}) -- use gt
+-- vim.keymap.set({'n', 'v'}, '<leader>tp', ':tabp<CR>', {}) -- use GT
 
 -- Quick fix
 vim.keymap.set('n', '<leader>q', ':copen<CR>', {})

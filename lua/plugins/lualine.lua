@@ -6,7 +6,7 @@ return {
   config = function()
     local leftRounded = ""
     local rightRounded = ""
-    local git_blame = require('gitblame')
+    -- local git_blame = require('gitblame')
     require('lualine').setup({
       options = {
         component_separators = "",
@@ -25,7 +25,7 @@ return {
           --   _separator = " ",
           --   no_harpoon = "Harpoon not loaded",
           -- },
-          { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available}
+          -- { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available}
         },
         lualine_x = {'searchcount', 'encoding', 'fileformat', 'filetype'}
       },

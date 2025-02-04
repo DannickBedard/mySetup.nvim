@@ -7,8 +7,8 @@ return {
       pattern = "*",
       callback = function()
         vim.cmd [[
-      highlight CursorLine guibg=#3c3c3c ctermbg=237
-      ]]
+       highlight CursorLine guibg=#3c3c3c ctermbg=237
+       ]]
       end,
     })
   end
