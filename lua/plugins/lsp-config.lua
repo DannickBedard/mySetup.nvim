@@ -1,3 +1,7 @@
+local shouldRun = false
+if shouldRun == false then
+ return {}
+else
 return {
   {
     "williamboman/mason.nvim",
@@ -105,3 +109,4 @@ return {
     end
   },
 }
+end

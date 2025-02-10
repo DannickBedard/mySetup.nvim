@@ -22,6 +22,7 @@ opt.colorcolumn = "80" -- Add line at 80 char
 
 opt.scrolloff = 10 -- When scrolling there will always be 10 line on top or bottom
 opt.sidescrolloff = 10 -- ... same but side way
+
 opt.incsearch = true
 
 opt.swapfile = false
