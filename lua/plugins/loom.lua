@@ -1,9 +1,9 @@
-local isValid = false
+local isValid = true
 
 if isValid then
 
   return {
-    dir = vim.fn.expand("~/AppData/Local/nvim-local/loom.nvim/"),
+    "DannickBedard/loom.nvim",
     config = function ()
 
       local projects = {

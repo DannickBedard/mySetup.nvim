@@ -61,6 +61,8 @@ return {
 
       -- javas
       --lspconfig.jdtls.setup({})
+      -- GO language
+      lspconfig.gopls.setup({})
 
       -- missing requirement lspconfig.phpactor.setup({})
       -- missing requirement lspconfig.psalm.setup({})

@@ -207,6 +207,10 @@ return {
         capabilities = capabilities
       })
 
+      lspconfig.gopls.setup({
+        capabilities = capabilities
+      })
+
       lspconfig.csharp_ls.setup({
         capabilities = capabilities
       })
