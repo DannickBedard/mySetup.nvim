@@ -5,6 +5,13 @@ return {
 
     config = function ()
 
+      require('telescope').setup{
+        defaults = {
+          path_display={"truncate"},
+          dynamic_preview_title = true
+        }
+      }
+
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<leader>fr', builtin.resume, {}) -- Resume last search
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
