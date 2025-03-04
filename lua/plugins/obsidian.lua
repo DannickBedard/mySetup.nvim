@@ -31,9 +31,12 @@ return {
         -- Trigger completion at 2 chars.
         min_chars = 2,
       },
+      preferred_link_style = "markdown", -- wiki or markdown
 
       -- see below for full list of options 👇
     })
+
     vim.opt.conceallevel = 1
+
   end
 }

@@ -1,4 +1,4 @@
-local isValid = false
+local isValid = true
 
 if isValid then
 
@@ -19,7 +19,7 @@ if isValid then
       local keymaps = {
         -- Open the project picker without prepend action.
         -- On selection there will be a action list selection
-        open_picker = "<leader>fp",
+        open_picker = "<leader>opf",
 
         -- Action for the picker item
         picker_open_split = "<C-S>",
@@ -35,10 +35,17 @@ if isValid then
         open_in_current_win = "<leader>opw",
       }
 
-      require("loom").setup({
+      local loom = require("loom")
+      loom.setup({
         keymaps = keymaps,
         projects = projects,
       });
+
+      -- Add current project working dir to the dynamic projects
+      vim.keymap.set('n', '<leader>on', loom.add_project_to_local_storage) -- on for o -> loom , n -> new project
+
+      -- Open pane listing the dynamic project. In this pane you can edit the dynamic projects (name and path)
+      vim.keymap.set('n', '<leader>oe', loom.show_projects_pane) -- oe for o -> loom, e -> edit
     end
   }
 else

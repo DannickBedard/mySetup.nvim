@@ -1,4 +1,4 @@
-local isValid = true
+local isValid = false
 
 if isValid then
 
@@ -35,10 +35,12 @@ if isValid then
         open_in_current_win = "<leader>opw",
       }
 
-      require("loom").setup({
+      local loom = require("loom")
+      loom.setup({
         keymaps = keymaps,
         projects = projects,
       });
+
     end
   }
 else

@@ -180,19 +180,40 @@ return {
         capabilities = capabilities
       })
 
-      lspconfig.intelephense.setup({
+      -- Try to delay so current dir is completly loaded
+      vim.api.nvim_create_autocmd("VimEnter", {
+        callback = function()
+          require('lspconfig').intelephense.setup({
+            capabilities = capabilities,
+            cmd = { 'intelephense', '--stdio' },
+            filetypes = { 'php' },
+            root_dir = function(fname)
+              local cwd = vim.loop.cwd()
+              return cwd
+            end,
+            settings = {
+              intelephense = {
+                files = {
+                  maxSize = 5000000, -- 5MB max size
+                  exclude = {
+                    "**/vendor/composer/autoload_classmap.php",
+                    "**/vendor/composer/autoload_static.php",
+                    "**/vendor/fakerphp/**"
+                  }
+                }
+              }
+            }
+          })
+        end
+      })
+
+      lspconfig.psalm.setup({
         capabilities = capabilities,
-        cmd = { 'intelephense', '--stdio' },
-        filetypes = { 'php' },
         root_dir = function(pattern)
           -- Seem to not work always if i don't do this. I always open my projects into cd into it and after open nvim .
           local cwd = vim.loop.cwd() -- current root dir
           return cwd
         end,
-      })
-
-      lspconfig.psalm.setup({
-        capabilities = capabilities
       })
 
       lspconfig.lua_ls.setup({
