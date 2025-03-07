@@ -282,6 +282,8 @@ Rename something multiple time :
 
 Issue with M^ :
 :set fileformat=unix
+or in bash :
+dos2unix path/name*
 
 Replace but keep a instance of the selection to happend our prepend
 1234 -> BSP-1234

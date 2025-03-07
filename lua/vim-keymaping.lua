@@ -32,10 +32,8 @@ vim.keymap.set('n', '<leader>qf', ':cfirt<CR>', {})
 vim.keymap.set('n', '<leader>ql', ':clast<CR>', {})
 
 -- Split
-vim.keymap.set("n", "<leader>s", ":vsplit<CR>", {})
-vim.keymap.set("n", "<leader>S", ":split<CR>", {})
-vim.keymap.set("v", "<leader>s", ":vsplit<CR>", {})
-vim.keymap.set("v", "<leader>S", ":split<CR>", {})
+-- vim.keymap.set({"n", "v"}, "<leader>s", ":vsplit<CR>", {}) -- Vertical split : Use <C-w>v
+-- vim.keymap.set({"n", "v"}, "<leader>S", ":split<CR>", {}) -- Horizontal split : Use <C-w>s
 
 -- other
 vim.keymap.set("n", "Q", "<nop>") -- seem like Q goes to dark place
