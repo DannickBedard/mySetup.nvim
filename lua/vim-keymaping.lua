@@ -13,6 +13,7 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', {}) -- move half page and center cursor
 vim.keymap.set('n', '<C-u>', '<C-u>zz', {}) -- move half page and center cursor
 vim.keymap.set('n', 'n', 'nzzzv', {}) -- Next result of search and center
 vim.keymap.set('n', 'N', 'Nzzzv', {}) -- Next result of search and center
+vim.keymap.set('n', '<leader>/', '/\\<\\><Left><Left>', { noremap = true, silent = true })
 
 -- New join binding
 vim.keymap.set('n', '<leader>j', 'ddp', {})

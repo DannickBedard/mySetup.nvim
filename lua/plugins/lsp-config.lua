@@ -64,9 +64,6 @@ return {
       -- GO language
       lspconfig.gopls.setup({})
 
-      -- missing requirement lspconfig.phpactor.setup({})
-      -- missing requirement lspconfig.psalm.setup({})
-
       -- Global mappings.
       -- See `:help vim.diagnostic.*` for documentation on any of the below functions
       vim.keymap.set('n', '<leader>dh', vim.diagnostic.open_float)

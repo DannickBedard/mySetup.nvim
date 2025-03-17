@@ -15,16 +15,8 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          -- LUA
           "lua_ls",
-          -- JS
           "tsserver",
-          -- PHP
-         -- "intelephense",
-          -- "phpactor",
-          -- missing requirement"phpactor",
-          -- missing requirement "psalm"
-          -- CSS
           "cssls",
           "jdtls",
         }
@@ -37,39 +29,18 @@ return {
       local lspconfig = require('lspconfig')
       local util = require 'lspconfig.util'
 
-
-      --
-      --
-      -- SEE completion.lua for the setup... 
-      -- If setup call two time the second will override the first one...
-      --
-      --
-
-      -- LUA
-      -- lspconfig.lua_ls.setup({})
-
-      -- JS
-      -- lspconfig.tsserver.setup({})
-
-      -- PHP
-      -- lspconfig.intelephense.setup({ cmd = {"intelephense", "--stdio" }, root_dir = lspconfig.util.root_pattern(".git") })
-      -- CSS
-      -- lspconfig.cssls.setup({})
-
-      -- C#
-      -- lspconfig.csharp_ls.setup({})
-      -- lspconfig.omnisharp.setup({})
-
-      -- javas
-      --lspconfig.jdtls.setup({})
-
-      -- missing requirement lspconfig.phpactor.setup({})
-      -- missing requirement lspconfig.psalm.setup({})
+      -- note :
+      -- vim.diagnostic.severity.ERROR
+      -- vim.diagnostic.severity.WARN
+      -- vim.diagnostic.severity.INFO
+      -- vim.diagnostic.severity.HINT
 
       -- Global mappings.
       -- See `:help vim.diagnostic.*` for documentation on any of the below functions
       vim.keymap.set('n', '<leader>dh', vim.diagnostic.open_float)
-      vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next) -- Navigate throw lsp error, warn
+      vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next) -- Navigate throw lsp notic
+      vim.keymap.set('n', '<leader>de', function() vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR }) end) -- Navigate throw lsp error
+      vim.keymap.set('n', '<leader>dE', function() vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR }) end) -- Navigate throw lsp error
       vim.keymap.set('n', '<leader>dN', vim.diagnostic.goto_prev)
 
       vim.keymap.set('n', '<leader>dq', vim.diagnostic.setqflist)
@@ -218,7 +189,12 @@ return {
       })
 
       lspconfig.lua_ls.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+        root_dir = function(pattern)
+          -- Seem to not work always if i don't do this. I always open my projects into cd into it and after open nvim .
+          local cwd = vim.loop.cwd() -- current root dir
+          return cwd
+        end,
       })
 
       lspconfig.cssls.setup({
