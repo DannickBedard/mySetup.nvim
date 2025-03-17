@@ -1,3 +1,5 @@
+local valid = false
+if valid then
 return {
   {
     'linrongbin16/lsp-progress.nvim',
@@ -82,3 +84,6 @@ return {
     end
   }
 }
+else
+  return {}
+end

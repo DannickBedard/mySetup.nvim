@@ -65,3 +65,36 @@ autocmd('TextYankPost', {
 
 -- Make cursor block always... to be more the same as vim
 vim.opt.guicursor = "n-v-i-c:block"
+
+
+
+
+local function update_statusline()
+    vim.system({"git", "rev-parse", "--abbrev-ref", "HEAD"}, {text = true}, function(res)
+        vim.schedule(function()
+            local branch = " " .. vim.trim(res.stdout)
+            vim.o.statusline = " %F %{&modified?'●':''} " .. branch .. " %= ─ %y ─ at %c ─ %L lines ─ %%%p "
+            vim.cmd("redrawstatus")
+        end)
+    end)
+end
+
+vim.api.nvim_create_autocmd({"BufEnter", "BufWritePost", "ShellCmdPost"}, {
+    pattern = "*",
+    callback = function()
+        local filename = vim.fn.bufname("%")
+        local buftype = vim.bo.buftype
+        if filename == "" or buftype ~= "" then
+            vim.schedule(function()
+                vim.opt_local.statusline = " "
+            end)
+        else
+            update_statusline()
+        end
+    end,
+})
+
+vim.o.statusline = " %F %{&modified?'●':''} %= ─ %y ─ at %c ─ %L lines ─ %%%p "
+
+-- # vim.o.laststatus = 3
+
