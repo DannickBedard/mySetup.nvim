@@ -94,7 +94,7 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWritePost", "ShellCmdPost"}, {
     end,
 })
 
-vim.o.statusline = " %F %{&modified?'●':''} %= ─ %y ─ at %c ─ %L lines ─ %%%p "
+-- vim.o.statusline = " %F %{&modified?'●':''} %= ─ %y ─ at %c ─ %L lines ─ %%%p "
 
 -- # vim.o.laststatus = 3
 

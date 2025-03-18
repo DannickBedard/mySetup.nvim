@@ -8,9 +8,11 @@ return {
       require('telescope').setup{
         defaults = {
           path_display={"truncate"},
-          dynamic_preview_title = true
+          dynamic_preview_title = true,
+          winblend = 25, -- Make telescope transparent
         }
       }
+
 
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<leader>fr', builtin.resume, {}) -- Resume last search
@@ -43,11 +45,12 @@ return {
         builtin.find_files({ hidden = true , no_ignore = true, no_ignore_parent = true})
       end, opts)
 
+      local customTelescope = require("vim-custom-telescope");
       -- fg find global
-      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+      vim.keymap.set('n', '<leader>fg', customTelescope, {})
       vim.keymap.set('v', '<leader>fg', function()
         local text = vim.getVisualSelection()
-        builtin.live_grep({ default_text = text })
+        customTelescope({ default_text = text })
       end, opts)
       vim.keymap.set('n', '<leader>fhg', function()
         builtin.live_grep({ hidden = true, additional_args = allFileArgs })
