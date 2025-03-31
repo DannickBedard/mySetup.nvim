@@ -7,8 +7,11 @@ opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
 
-opt.inccommand = "split"
+opt.inccommand = "split" -- Open preview window on substitue cdm. :s/
+opt.splitbelow = true -- Open split below default is the reverse
+opt.splitright = true -- Open split on the right, default is the reverse
 opt.formatoptions:remove "o"
+opt.signcolumn = "yes"
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
@@ -98,3 +101,6 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWritePost", "ShellCmdPost"}, {
 
 -- # vim.o.laststatus = 3
 
+
+opt.title = true
+opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'

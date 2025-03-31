@@ -41,16 +41,27 @@ return {
         local text = vim.getVisualSelection()
         builtin.find_files({ default_text = text })
       end, opts)
+
+      -- Find hidden file
       vim.keymap.set('n', '<leader>fhf', function()
         builtin.find_files({ hidden = true , no_ignore = true, no_ignore_parent = true})
       end, opts)
 
-      local customTelescope = require("vim-custom-telescope");
+      vim.keymap.set("n", "<space>fn", function()
+        builtin.find_files { cwd = "~/Documents/Notes" }
+      end)
+
+
+
+
+      local customTelescopeGrep = require("vim-custom-telescope-grep");
+      local customTelescopeFile = require("vim-custom-telescope-file");
+      vim.keymap.set('n', '<leader>tff', customTelescopeFile, {})
       -- fg find global
-      vim.keymap.set('n', '<leader>fg', customTelescope, {})
+      vim.keymap.set('n', '<leader>fg', customTelescopeGrep, {})
       vim.keymap.set('v', '<leader>fg', function()
         local text = vim.getVisualSelection()
-        customTelescope({ default_text = text })
+        customTelescopeGrep({ default_text = text })
       end, opts)
       vim.keymap.set('n', '<leader>fhg', function()
         builtin.live_grep({ hidden = true, additional_args = allFileArgs })

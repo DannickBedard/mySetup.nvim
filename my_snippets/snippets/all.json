@@ -16,7 +16,7 @@
   "sm-logger": {
     "prefix": "@vlog",
     "body": [
-      "\\viridem\\logger\\ViridemLogger::getLogger(__CLASS__)->info('DANNICK-$2' . var_dump_return($1));"
+      "\\viridem\\logger\\ViridemLogger::getLogger(__CLASS__)->info('DANNICK-$2', $1);"
     ],
     "description": "Template de base d'un log dans Viridem."
   },

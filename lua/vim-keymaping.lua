@@ -5,7 +5,7 @@ vim.keymap.set({'n', "v"} , '<leader>cp', '"+p', {})
 vim.keymap.set({'n', "v"} , '<leader>cP', '"+P', {})
 vim.keymap.set({'n'} , '<leader>dirp', '"%p', {})
 vim.keymap.set({'n'} , '<leader>dirP', '"%P', {})
-vim.keymap.set({'n', "v"} , 'yyp', ':co.<CR>', {}) -- Dup line wihout affecting reg
+vim.keymap.set({'n'} , 'yyp', ':co.<CR>', {}) -- Dup line wihout affecting reg
 
 vim.keymap.set('v', '<leader>y', '"+y', {})
 

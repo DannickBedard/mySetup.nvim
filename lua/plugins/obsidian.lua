@@ -2,7 +2,7 @@ return {
   "epwalsh/obsidian.nvim",
   version = "*",  -- recommended, use latest release instead of latest commit
   lazy = true,
-  ft = "markdown",
+   ft = "*",
   -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
   -- event = {
   --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
@@ -24,6 +24,8 @@ return {
           path = vim.fn.expand("~/Documents/Notes"),
         },
       },
+      notes_subdir = "3-Resources/Zettelkasten",
+      new_notes_location = "notes_subdir",
       -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
       completion = {
         -- Set to false to disable completion.
