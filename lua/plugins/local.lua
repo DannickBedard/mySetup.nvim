@@ -19,7 +19,7 @@ if isValid then
       local keymaps = {
         -- Open the project picker without prepend action.
         -- On selection there will be a action list selection
-        open_picker = "<leader>opf",
+        open_picker = "<leader>lf",
 
         -- Action for the picker item
         picker_open_split = "<C-S>",
@@ -29,10 +29,10 @@ if isValid then
 
         -- Open the picker with a action prepend
         -- So on picker selection it will open the project in the actons chosen for the binding
-        open_in_split = "<leader>opS",
-        open_in_vsplit = "<leader>ops",
-        open_in_tab = "<leader>opt",
-        open_in_current_win = "<leader>opw",
+        open_in_split = "<leader>lS",
+        open_in_vsplit = "<leader>ls",
+        open_in_tab = "<leader>lt",
+        open_in_current_win = "<leader>lw",
       }
 
       local loom = require("loom")
@@ -42,10 +42,10 @@ if isValid then
       });
 
       -- Add current project working dir to the dynamic projects
-      vim.keymap.set('n', '<leader>on', loom.add_project_to_local_storage) -- on for o -> loom , n -> new project
+      vim.keymap.set('n', '<leader>ln', loom.add_project_to_local_stfrage) -- ln for l -> loom , n -> new project
 
       -- Open pane listing the dynamic project. In this pane you can edit the dynamic projects (name and path)
-      vim.keymap.set('n', '<leader>oe', loom.show_projects_pane) -- oe for o -> loom, e -> edit
+      vim.keymap.set('n', '<leader>le', loom.show_projects_pane) -- le for l -> loom, e -> edit
     end
   }
 else
