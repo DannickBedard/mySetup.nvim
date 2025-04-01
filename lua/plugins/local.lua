@@ -42,7 +42,7 @@ if isValid then
       });
 
       -- Add current project working dir to the dynamic projects
-      vim.keymap.set('n', '<leader>ln', loom.add_project_to_local_stfrage) -- ln for l -> loom , n -> new project
+      vim.keymap.set('n', '<leader>ln', loom.add_project_to_local_storage) -- ln for l -> loom , n -> new project
 
       -- Open pane listing the dynamic project. In this pane you can edit the dynamic projects (name and path)
       vim.keymap.set('n', '<leader>le', loom.show_projects_pane) -- le for l -> loom, e -> edit
