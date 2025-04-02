@@ -63,5 +63,3 @@ print(new_line)
   end
 end, {})
 
--- Keybinding
-vim.keymap.set('n', '<leader>jd', ':AddJsonDecodeCoalesceCurrentLine<CR>', { noremap = true, silent = true, desc = "Add ?? to json_decode in current line" })

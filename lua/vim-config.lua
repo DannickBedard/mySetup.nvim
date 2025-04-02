@@ -100,7 +100,14 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWritePost", "ShellCmdPost"}, {
 -- vim.o.statusline = " %F %{&modified?'●':''} %= ─ %y ─ at %c ─ %L lines ─ %%%p "
 
 -- # vim.o.laststatus = 3
+local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
 
+if is_windows then
+  vim.o.shell = vim.fn.shellescape('C:/Program Files/Git/bin/bash.exe')
+  vim.env.PATH = vim.fn.shellescape('C:/Program Files/Git/bin') .. ';' .. vim.env.PATH
+  vim.o.shellcmdflag = "-c"
+end
 
+-- Change the terminal tab for the current file in nvim
 opt.title = true
 opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'

@@ -246,13 +246,10 @@ H           -> while in file explore toggle hidden file
 
 ## Completion
 
-todo..
-
-## Text edition normal mode
-
-<leader>j   -> override join line under
-
-<leader>k   -> override join line hover
+<C-x><C-f> -> auto complet file path
+<C-k> -> Open current signing of param in method
+<C-n> -> Trigger completion next
+<C-p> -> Trigger completion previous
 
 ## Commands (quickfixs)
 

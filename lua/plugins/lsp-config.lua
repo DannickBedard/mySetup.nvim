@@ -1,5 +1,5 @@
 local shouldRun = false
-if shouldRun == false then
+if shouldRun then
  return {}
 else
 return {
