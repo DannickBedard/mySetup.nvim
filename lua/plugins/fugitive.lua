@@ -27,6 +27,9 @@ return {
           vim.cmd.Git({'pull',  '--rebase'})
         end, opts)
 
+        -- Does not seem to work... 
+        vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
         -- NOTE: It allows me to easily set the branch i am pushing and any tracking
         -- needed if i did not set the branch up correctly
         -- vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts);

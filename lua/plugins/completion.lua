@@ -157,6 +157,8 @@ return {
       -- Try to delay so current dir is completly loaded
       vim.api.nvim_create_autocmd("VimEnter", {
         callback = function()
+          -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#intelephense
+          -- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/configs/intelephense.lua#L4
           require('lspconfig').intelephense.setup({
             capabilities = capabilities,
             cmd = { 'intelephense', '--stdio' },
@@ -174,7 +176,11 @@ return {
                     "**/vendor/composer/autoload_static.php",
                     "**/vendor/fakerphp/**"
                   }
-                }
+                },
+                --stubs = {
+                  --"imagick",
+                  --"FFI",
+                --}
               }
             }
           })
