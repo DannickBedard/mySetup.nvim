@@ -1,5 +1,5 @@
 local shouldRun = false
-if shouldRun then
+if shouldRun == false then
  return {}
 else
 return {
@@ -33,6 +33,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
+        print("Hum....")
       local lspconfig = require('lspconfig')
       local util = require 'lspconfig.util'
 

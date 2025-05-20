@@ -225,6 +225,10 @@ return {
       -- DOC : https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#omnisharp
       lspconfig.omnisharp.setup({
         capabilities = capabilities,
+        root_dir = function(fname)
+          local cwd = vim.loop.cwd()
+          return cwd
+        end,
         cmd = { "dotnet", vim.fn.expand("~/AppData/Local/nvim-data/mason/packages/omnisharp/libexec/OmniSharp.dll") },
 
         settings = {

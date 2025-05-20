@@ -51,6 +51,7 @@ vim.keymap.set('n', 'daq', 'da"', {})
 vim.keymap.set('n', 'yaq', 'ya"', {})
 vim.keymap.set('n', 'vaq', 'va"', {})
 
+vim.keymap.set('n', '<c-f>', '/\\u<CR>', {}) -- fix the next uppercase car ; Override the default <c-f> that was scrollingthe entire page. I do not use this scrool.
 
 vim.api.nvim_set_keymap(
     'n',
@@ -58,3 +59,5 @@ vim.api.nvim_set_keymap(
     [[:lua vim.cmd('read !git branch --show-current')<CR>]],
     { noremap = true, silent = true }
 )
+
+vim.keymap.set({'n', 'i', 'v' }, '<F1>', '<Nop>') -- Disable F1 opening help
