@@ -13,7 +13,7 @@ return {
           -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
           -- Using this option may slow down your editor, and you may see some duplicate highlights.
           -- Instead of true it can also be a list of languages
-           additional_vim_regex_highlighting = false,
+          additional_vim_regex_highlighting = false,
           languages = {"php", "markdown", "markdown_inline"}
         },
         indent = { enable = true },
@@ -34,7 +34,10 @@ return {
       -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
       separator = nil,
       zindex = 20, -- The Z-index of the context window
-      on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+      on_attach = function(bufnr)
+        -- Return false to disable attaching
+        return not vim.bo[bufnr].filetype == "markdown" and not vim.bo[bufnr].filetype == "txt"
+      end,
     }
   }
 }
