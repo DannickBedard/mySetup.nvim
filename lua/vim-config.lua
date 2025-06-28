@@ -26,17 +26,13 @@ opt.colorcolumn = "80" -- Add line at 80 char
 opt.scrolloff = 10 -- When scrolling there will always be 10 line on top or bottom
 opt.sidescrolloff = 10 -- ... same but side way
 
-opt.incsearch = true
+opt.incsearch = true -- display the search while typing it
 
 opt.swapfile = false
--- à voir si c'est pertinent -- vim.opt.backup = false
--- à voir si c'est pertinent --vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
--- à voir si c'est pertinent --vim.opt.undofile = true
 
 -- LineNumberColore
 vim.api.nvim_set_hl(0, 'LineNrAbove', { bold=true })
 vim.api.nvim_set_hl(0, 'LineNrBelow', { bold=true })
-  -- Does not seem to work ... : 
 vim.api.nvim_set_hl(0, 'LineNr', { fg='White', bold=true })
 vim.api.nvim_set_hl(0, 'CursorLineNr', { bg='#3e3f40' })
 vim.api.nvim_set_hl(0, 'CursorLine', { bg='#3e3f40' })
@@ -69,36 +65,6 @@ autocmd('TextYankPost', {
 -- Make cursor block always... to be more the same as vim
 vim.opt.guicursor = "n-v-i-c:block"
 
-
-
-
-local function update_statusline()
-    vim.system({"git", "rev-parse", "--abbrev-ref", "HEAD"}, {text = true}, function(res)
-        vim.schedule(function()
-            local branch = " " .. vim.trim(res.stdout)
-            vim.o.statusline = " %F %{&modified?'●':''} " .. branch .. " %= ─ %y ─ at %c ─ %L lines ─ %%%p "
-            vim.cmd("redrawstatus")
-        end)
-    end)
-end
-
-vim.api.nvim_create_autocmd({"BufEnter", "BufWritePost", "ShellCmdPost"}, {
-    pattern = "*",
-    callback = function()
-        local filename = vim.fn.bufname("%")
-        local buftype = vim.bo.buftype
-        if filename == "" or buftype ~= "" then
-            vim.schedule(function()
-                vim.opt_local.statusline = " "
-            end)
-        else
-            update_statusline()
-        end
-    end,
-})
-
--- vim.o.statusline = " %F %{&modified?'●':''} %= ─ %y ─ at %c ─ %L lines ─ %%%p "
-
 -- # vim.o.laststatus = 3
 local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
 
@@ -111,3 +77,26 @@ end
 -- Change the terminal tab for the current file in nvim
 opt.title = true
 opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'
+
+vim.api.nvim_create_user_command('Wrap', function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.breakindent = true
+end, {})
+
+vim.api.nvim_create_user_command('NoWrap', function()
+    vim.opt_local.wrap = false
+    vim.opt_local.linebreak = false
+    vim.opt_local.breakindent = false
+end, {})
+
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "text", "gitcommit" },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.breakindent = true
+    -- vim.opt_local.showbreak = "↪ "
+  end,
+})
