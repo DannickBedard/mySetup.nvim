@@ -20,6 +20,13 @@
     ],
     "description": "Template de base d'un log dans Viridem."
   },
+  "laravel-logger": {
+    "prefix": "@llog",
+    "body": [
+      "\\Illuminate\\Support\\Facades\\Log::debug('Dannick : ' . var_dump_return()); "
+    ],
+    "description": "Template de base d'un log dans Viridem."
+  },
   "wordpresslogger": {
     "prefix": "wordpress-logger",
     "body": [
