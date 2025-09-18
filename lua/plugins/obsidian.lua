@@ -58,14 +58,16 @@ return {
       end,
     })
 
-
+    -- New note cmd
     vim.keymap.set("n", "<leader>on", "<CMD>ObsidianNew<CR>", { desc = "Create new obsidian note" })
-    vim.keymap.set("n", "<leader>of", "<CMD>ObsidianSearch<CR>", { desc = "Search obsidian note" })
+    vim.keymap.set("n", "<leader>ot", "<CMD>ObsidianToday<CR>", { desc = "Create new obsidian today note" })
     vim.keymap.set("n", "<leader>oex", "<CMD>ObsidianExrtactNote<CR>", { desc = "Extract current text to new obsidian notes" })
-    vim.keymap.set("n", "<leader>ot", "<CMD>ObsidianTags<CR>", { desc = "Find tags in obsidian" })
 
+    -- Search cmd
+    vim.keymap.set("n", "<leader>oft", "<CMD>ObsidianTags<CR>", { desc = "Find tags in obsidian" })
+    vim.keymap.set("n", "<leader>ofg", "<CMD>ObsidianSearch<CR>", { desc = "Search obsidian note" })
+    vim.keymap.set("n", "<leader>od", "<CMD>ObsidianDailies<CR>", { desc = "Create new obsidian today note" })
 
-    vim.opt.conceallevel = 1
-
+    -- vim.opt.conceallevel = 1
   end
 }

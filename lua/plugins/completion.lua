@@ -151,7 +151,11 @@ return {
       local lspconfig = require("lspconfig")
 
       lspconfig.tsserver.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+        root_dir = function(fname)
+          local cwd = vim.loop.cwd()
+          return cwd
+        end,
       })
 
       -- Try to delay so current dir is completly loaded

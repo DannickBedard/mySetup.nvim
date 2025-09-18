@@ -36,7 +36,17 @@ return {
       zindex = 20, -- The Z-index of the context window
       on_attach = function(bufnr)
         -- Return false to disable attaching
-        return not vim.bo[bufnr].filetype == "markdown" and not vim.bo[bufnr].filetype == "txt"
+        local shouldAttach = true;
+
+        if vim.bo[bufnr].filetype == "txt" then
+          shouldAttach = false;
+        end
+
+        if vim.bo[bufnr].filetype == "markdown" then
+          shouldAttach = false;
+        end
+
+        return shouldAttach;
       end,
     }
   }

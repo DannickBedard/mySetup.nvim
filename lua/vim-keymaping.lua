@@ -41,15 +41,17 @@ vim.keymap.set("n", "Q", "<nop>") -- seem like Q goes to dark place
 
 vim.keymap.set({'n', 'v'}, '<leader>B', '<C-V>', {}) -- Enter visual block
 
--- double quote shurtcut
-vim.keymap.set('n', 'ciq', 'ci"', {})
-vim.keymap.set('n', 'diq', 'di"', {})
-vim.keymap.set('n', 'yiq', 'yi"', {})
-vim.keymap.set('n', 'viq', 'vi"', {})
-vim.keymap.set('n', 'caq', 'ca"', {})
-vim.keymap.set('n', 'daq', 'da"', {})
-vim.keymap.set('n', 'yaq', 'ya"', {})
-vim.keymap.set('n', 'vaq', 'va"', {})
+-- double quote shurtcut, removed so i can learn to use my keyboard layer instead
+-- vim.keymap.set('n', 'ciq', 'ci"', {})
+-- vim.keymap.set('n', 'diq', 'di"', {})
+-- vim.keymap.set('n', 'yiq', 'yi"', {})
+-- vim.keymap.set('n', 'viq', 'vi"', {})
+-- vim.keymap.set('n', 'caq', 'ca"', {})
+-- vim.keymap.set('n', 'daq', 'da"', {})
+-- vim.keymap.set('n', 'yaq', 'ya"', {})
+-- vim.keymap.set('n', 'vaq', 'va"', {})
+vim.keymap.set('n', '<c-w>u', '20<c-w><', {})
+vim.keymap.set('n', '<c-w>p', '20<c-w>>', {})
 
 vim.keymap.set('n', '<c-f>', '/\\u<CR>', {}) -- fix the next uppercase car ; Override the default <c-f> that was scrollingthe entire page. I do not use this scrool.
 

@@ -11,7 +11,7 @@ opt.inccommand = "split" -- Open preview window on substitue cdm. :s/
 opt.splitbelow = true -- Open split below default is the reverse
 opt.splitright = true -- Open split on the right, default is the reverse
 opt.formatoptions:remove "o"
-opt.signcolumn = "yes"
+opt.signcolumn = "yes" -- Prevent sign column to shift fiwht
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
@@ -98,5 +98,32 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.linebreak = true
     vim.opt_local.breakindent = true
     -- vim.opt_local.showbreak = "↪ "
+    vim.wo.conceallevel = 2
   end,
 })
+
+
+
+-- Try fix warning for npm build
+-- Stop LSP/file watchers from spamming on dist/
+vim.opt.wildignore:append { "*/dist/*", "*/viridem/app/data/*", "*/viridem/.git/*" }
+
+-- If using nvim-lspconfig (inotify watchers):
+vim.lsp.handlers["workspace/didChangeWatchedFiles"] = function(...) end
+
+
+vim.opt.wildignore:append(".git/*")
+
+-- Disable file watching for .git to avoid EPERM
+vim.api.nvim_create_autocmd("BufRead", {
+  callback = function()
+    if vim.fn.expand("%:p"):find("dist") then
+      vim.loop.fs_event_stop()
+    end
+    if vim.fn.expand("%:p"):find("vendor") then
+      vim.loop.fs_event_stop()
+    end
+  end,
+
+})
+

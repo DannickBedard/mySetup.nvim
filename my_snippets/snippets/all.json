@@ -9,25 +9,25 @@
   "logger": {
     "prefix": "viridem-logger",
     "body": [
-      "\\viridem\\logger\\ViridemLogger::getLogger(__CLASS__)->info('DANNICK-' . var_dump_return($1));"
+      "\\viridem\\logger\\ViridemLogger::getLogger(__FILE__)->info('DANNICK-' . var_dump_return($1));"
     ],
     "description": "Template de base d'un log dans Viridem."
   },
   "sm-logger": {
     "prefix": "@vlog",
     "body": [
-      "\\viridem\\logger\\ViridemLogger::getLogger(__CLASS__)->info('DANNICK-$2', $1);"
+      "\\viridem\\logger\\ViridemLogger::getLogger(__FILE__)->info('DANNICK-$2', $1);"
     ],
     "description": "Template de base d'un log dans Viridem."
   },
   "laravel-logger": {
     "prefix": "@llog",
     "body": [
-      "\\Illuminate\\Support\\Facades\\Log::debug('Dannick : ' . var_dump_return()); "
+      "\\Illuminate\\Support\\Facades\\Log::debug('Dannick : ' . var_dump_return($1));"
     ],
     "description": "Template de base d'un log dans Viridem."
   },
-  "wordpresslogger": {
+  "wordpresslogger": {  
     "prefix": "wordpress-logger",
     "body": [
       "error_log(print_r($1 ,true));"
