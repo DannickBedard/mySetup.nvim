@@ -1,5 +1,7 @@
 local opt = vim.opt -- for conciseness
 
+opt.number = false
+
 opt.number = true
 opt.relativenumber = true
 opt.expandtab = true
@@ -68,9 +70,11 @@ vim.opt.guicursor = "n-v-i-c:block"
 -- # vim.o.laststatus = 3
 local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
 
-if is_windows then
-  vim.o.shell = vim.fn.shellescape('C:/Program Files/Git/bin/bash.exe')
-  vim.env.PATH = vim.fn.shellescape('C:/Program Files/Git/bin') .. ';' .. vim.env.PATH
+if vim.loop.os_uname().sysname:match("Windows") then
+  -- Quote the path so Neovim sees it as a single file
+  vim.o.shell = '"C:/Program Files/Git/bin/bash.exe"'
+  -- Prepend Git bin to PATH
+  vim.env.PATH = "C:/Program Files/Git/bin;" .. vim.env.PATH
   vim.o.shellcmdflag = "-c"
 end
 
@@ -127,3 +131,9 @@ vim.api.nvim_create_autocmd("BufRead", {
 
 })
 
+-- Error executing luv callback:
+-- ...ogram Files/Neovim/share/nvim/runtime/lua/vim/_watch.lua:90: EPERM: operation not permitted: C:/viridem_v2/viridem/resources/lib/vendor/box/spout/src/Spout/Writer/Exception/WriterException.php
+-- stack traceback:
+--         [C]: in function 'assert'
+--         ...ogram Files/Neovim/share/nvim/runtime/lua/vim/_watch.lua:90: in function <...ogram Files/Neovim/share/nvim/runtime/lua/vim/_watch.lua:72>
+-- Press ENTER or type command to continue

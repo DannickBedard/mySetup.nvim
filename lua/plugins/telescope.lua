@@ -9,13 +9,19 @@ return {
         defaults = {
           path_display={"truncate"},
           dynamic_preview_title = true,
-          winblend = 25, -- Make telescope transparent
+          -- layout_strategy='vertical',
+          layout_config = {
+            horizontal = {height = 0.99, width = 0.99 }
+            },
+          -- winblend = 25, -- Make telescope transparent
+          cache_picker = {num_pickers = 100, limit_entries = 1000}
         }
       }
 
 
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<leader>fr', builtin.resume, {}) -- Resume last search
+      vim.keymap.set('n', '<leader>fp', builtin.pickers, {}) -- jshow previous picker
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 

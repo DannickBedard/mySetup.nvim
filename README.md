@@ -200,6 +200,7 @@ gr          -> references
 <leader>fh  -> Find in help
 
 <leader>fr  -> Resume last search
+<leader>fp  -> List of 100 last searches <cr> to open selection
 
 <leader>fs  -> (find string) Find open telescope searching for word under cusor. Than you can filter by file name
 

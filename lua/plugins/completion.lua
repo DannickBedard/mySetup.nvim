@@ -24,6 +24,12 @@ return {
     end
   },
   {
+    "supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup({})
+    end,
+  },
+  {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require('lspconfig')
