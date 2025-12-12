@@ -62,6 +62,8 @@ return {
 
       local customTelescopeGrep = require("vim-custom-telescope-grep");
       local customTelescopeFile = require("vim-custom-telescope-file");
+      local customTelescopeRipgrepRaw = require("vim-custom-telescope-ripgrep-raw");
+
       vim.keymap.set('n', '<leader>tff', customTelescopeFile, {})
       -- fg find global
       vim.keymap.set('n', '<leader>fg', customTelescopeGrep, {})
@@ -69,6 +71,13 @@ return {
         local text = vim.getVisualSelection()
         customTelescopeGrep({ default_text = text })
       end, opts)
+
+      vim.keymap.set('n', '<leader>rg', customTelescopeRipgrepRaw, {})
+      vim.keymap.set('v', '<leader>rg', function()
+        local text = vim.getVisualSelection()
+        customTelescopeRipgrepRaw({ default_text = text })
+      end, opts)
+
       vim.keymap.set('n', '<leader>fhg', function()
         builtin.live_grep({ hidden = true, additional_args = allFileArgs })
       end, opts)
