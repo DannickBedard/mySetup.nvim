@@ -8,7 +8,7 @@ local function parse_args(prompt)
   local words = vim.split(prompt, "%s+")
 
   local args = { "rg", "--color=never", "--no-heading", "--with-filename",
-                 "--line-number", "--column", "--smart-case" }
+                 "--line-number", "--column", "--smart-case", "--glob !rockyou.txt" }
 
   for _, w in ipairs(words) do
     if w ~= "" then

@@ -26,8 +26,12 @@ return {
   {
     "supermaven-inc/supermaven-nvim",
     config = function()
-      require("supermaven-nvim").setup({})
+      require("supermaven-nvim").setup({
+        -- disable_inline_completion = true,
+        -- disable_keymaps = true,
+      })
     end,
+    
   },
   {
     "neovim/nvim-lspconfig",
@@ -124,6 +128,8 @@ return {
 
       require("luasnip.loaders.from_vscode").load({paths = "./my_snippets"})
 
+      local compare = require('cmp.config.compare')
+
       cmp.setup({
         snippet = {
           expand = function(args)
@@ -145,10 +151,27 @@ return {
         }),
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
+          -- { name = 'supermaven' },
           { name = 'path' },
           { name = 'buffer' },
           { name = 'luasnip' }, -- For luasnip users.
-        })
+        }),
+        -- doc sorting : https://github.com/hrsh7th/nvim-cmp/blob/da88697d7f45d16852c6b2769dc52387d1ddc45f/lua/cmp/config/compare.lua#L7
+        sorting = {
+          priority_weight = 2,
+          comparators = {
+            compare.offset,
+            compare.exact,
+            -- compare.scopes,
+            compare.score,
+            compare.recently_used,
+            compare.locality,
+            compare.kind,
+            compare.sort_text,
+            compare.length,
+            compare.order,
+          },
+        },
       })
 
       -- Set up lspconfig.

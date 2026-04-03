@@ -31,6 +31,9 @@ return function(opts)
       local prompt_split = vim.split(prompt, "  ")
 
       local args = { "rg" }
+      table.insert(args, "--glob")
+      table.insert(args, "!rockyou.txt")
+
       if prompt_split[1] then
         table.insert(args, "-e")
         table.insert(args, prompt_split[1])

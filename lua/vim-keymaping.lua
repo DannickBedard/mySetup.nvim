@@ -20,7 +20,7 @@ vim.keymap.set('n', '<leader>j', 'ddp', {})
 vim.keymap.set('n', '<leader>k', 'ddkP', {}) -- Does not work on the bottom of the file...
 
 -- Tabs naviguation
-vim.keymap.set({'n', 'v'}, '<leader>tt', ':tabnew %<CR>', {})
+vim.keymap.set({'n', 'v'}, '<leader>tt', ':tab split<CR>', {}) -- will open new tab on the exact same location
 -- vim.keymap.set({'n', 'v'}, '<leader>tn', ':tabn<CR>', {}) -- use gt
 -- vim.keymap.set({'n', 'v'}, '<leader>tp', ':tabp<CR>', {}) -- use GT
 
