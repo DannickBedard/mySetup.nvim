@@ -107,7 +107,8 @@ return {
       -- 🔥 FRECENCY (NEW)
       ------------------------------------------------------------------
 
-      vim.keymap.set("n", "<leader>fo", telescope.extensions.frecency.frecency)
+      -- todo : a explorer l'utilisation
+      vim.keymap.set("n", "<leader>ft", telescope.extensions.frecency.frecency)
 
       ------------------------------------------------------------------
       -- CUSTOM PICKERS (kept)
@@ -170,11 +171,10 @@ return {
       -- MISC
       ------------------------------------------------------------------
 
-      -- vim.keymap.set("n", "<leader>fo", builtin.oldfiles)
+      vim.keymap.set("n", "<leader>fo", builtin.oldfiles)
       vim.keymap.set("n", "<leader>fm", builtin.marks)
 
-      vim.keymap.set("n", "<leader>fq", builtin.quickfix)
-      vim.keymap.set("n", "<leader>fqh", builtin.quickfixhistory)
+      vim.keymap.set("n", "<leader>fq", builtin.quickfixhistory)
 
       vim.keymap.set("n", "<leader>fif", builtin.current_buffer_fuzzy_find)
 

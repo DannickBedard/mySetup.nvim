@@ -252,6 +252,28 @@ H           -> while in file explore toggle hidden file
 <C-n> -> Trigger completion next
 <C-p> -> Trigger completion previous
 
+## Claude Code (claudecode.nvim)
+
+Plugin : https://github.com/coder/claudecode.nvim
+Claude sees the current selection automatically when connected, so you can select code, go to the Claude window and ask about it.
+
+Send a selection : open Claude (<leader>ii), go back to the code (<C-\><C-n> then <C-w>h), select with V, then <leader>is.
+It adds a reference (@file#L10-25) in the prompt and focuses Claude. Type the question and Enter.
+
+Use `claude` in another terminal : open nvim first, then run /ide in claude and pick Neovim. All keymaps below work with that session.
+
+<leader>ii  -> Toggle Claude window (right split)
+<leader>if  -> Focus Claude window
+<leader>ic  -> Continue last Claude session
+<leader>ir  -> Resume a Claude session (pick from list)
+<leader>im  -> Select Claude model
+<leader>ib  -> Add current buffer (file) to Claude
+<leader>is  -> visual mode : Send selection to Claude
+<leader>is  -> in neo-tree / oil : Add file under cursor to Claude
+<leader>iy  -> Accept diff proposed by Claude
+<leader>in  -> Deny diff proposed by Claude
+<C-\><C-n>  -> Leave terminal mode (in Claude window) to move between windows
+
 ## Commands (quickfixs)
 
 :lopen              -> Open quick fix

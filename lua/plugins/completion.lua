@@ -16,9 +16,11 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
-          "tsserver",
+          -- "tsserver",
           "cssls",
           "jdtls",
+          "vtsls",
+          "eslint",
         }
       })
     end
@@ -179,7 +181,15 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require("lspconfig")
 
-      lspconfig.tsserver.setup({
+      -- lspconfig.tsserver.setup({
+      --   capabilities = capabilities,
+      --   root_dir = function(fname)
+      --     local cwd = vim.loop.cwd()
+      --     return cwd
+      --   end,
+      -- })
+
+      lspconfig.vtsls.setup({
         capabilities = capabilities,
         root_dir = function(fname)
           local cwd = vim.loop.cwd()
