@@ -37,10 +37,11 @@ vim.keymap.set('n', '<leader>ql', ':clast<CR>', {})
 -- vim.keymap.set({"n", "v"}, "<leader>S", ":split<CR>", {}) -- Horizontal split : Use <C-w>s
 
 -- Terminal: move between splits with <C-w>h/j/k/l without doing <C-\><C-n> first
-vim.keymap.set('t', '<C-w>h', '<C-\\><C-n><C-w>h', {})
-vim.keymap.set('t', '<C-w>j', '<C-\\><C-n><C-w>j', {})
-vim.keymap.set('t', '<C-w>k', '<C-\\><C-n><C-w>k', {})
-vim.keymap.set('t', '<C-w>l', '<C-\\><C-n><C-w>l', {})
+-- Works with Ctrl released (<C-w>h) or still held (<C-w><C-h>)
+for _, dir in ipairs({ 'h', 'j', 'k', 'l' }) do
+    vim.keymap.set('t', '<C-w>' .. dir, '<C-\\><C-n><C-w>' .. dir, {})
+    vim.keymap.set('t', '<C-w><C-' .. dir .. '>', '<C-\\><C-n><C-w>' .. dir, {})
+end
 vim.keymap.set('t', '<C-w><C-w>', '<C-\\><C-n><C-w>w', {})
 -- Back in insert mode automatically when entering a terminal window
 vim.api.nvim_create_autocmd({ 'BufEnter', 'WinEnter' }, {
